@@ -6,17 +6,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="HandheldFriendly" content="True">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <meta name="description" content="本文主要介绍了使用Java中Specification的使用。 spring多条件查询方式——使用Specification1.Specification的简单介绍Specification最早是由《Domain Driven Design》中引入的。这是一个接口，里面只有一个抽象方法。熟悉Java8的人可能知道，如果一个接口中只有一个抽象方法，那么这个接口实现的时候可以使用匿名接口类，并且更进一">
+    <meta name="description" content="本文主要介绍了使用Java中Specification的使用。 spring多条件查询方式——使用Specification 在很多实际场景中，我们不仅需要通过一个或两个条件进行相关的查询，而是可能通过多个过滤条件进行查询和过滤筛选。 在这种情况下，我们可以考虑使用Specification来简化我们的查询方式。 1.Specification的简单介绍Specification最早是由《Doma">
 <meta property="og:type" content="article">
 <meta property="og:title" content="使用Specification进行spring多条件查询">
 <meta property="og:url" content="http://liuyanping.com/2018/11/19/2018-11-19-spring-data-jpa-specification/index.html">
 <meta property="og:site_name" content="There is no shortcut in life.">
-<meta property="og:description" content="本文主要介绍了使用Java中Specification的使用。 spring多条件查询方式——使用Specification1.Specification的简单介绍Specification最早是由《Domain Driven Design》中引入的。这是一个接口，里面只有一个抽象方法。熟悉Java8的人可能知道，如果一个接口中只有一个抽象方法，那么这个接口实现的时候可以使用匿名接口类，并且更进一">
+<meta property="og:description" content="本文主要介绍了使用Java中Specification的使用。 spring多条件查询方式——使用Specification 在很多实际场景中，我们不仅需要通过一个或两个条件进行相关的查询，而是可能通过多个过滤条件进行查询和过滤筛选。 在这种情况下，我们可以考虑使用Specification来简化我们的查询方式。 1.Specification的简单介绍Specification最早是由《Doma">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-11-19T10:37:23.410Z">
+<meta property="og:updated_time" content="2018-11-19T14:00:25.979Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="使用Specification进行spring多条件查询">
-<meta name="twitter:description" content="本文主要介绍了使用Java中Specification的使用。 spring多条件查询方式——使用Specification1.Specification的简单介绍Specification最早是由《Domain Driven Design》中引入的。这是一个接口，里面只有一个抽象方法。熟悉Java8的人可能知道，如果一个接口中只有一个抽象方法，那么这个接口实现的时候可以使用匿名接口类，并且更进一">
+<meta name="twitter:description" content="本文主要介绍了使用Java中Specification的使用。 spring多条件查询方式——使用Specification 在很多实际场景中，我们不仅需要通过一个或两个条件进行相关的查询，而是可能通过多个过滤条件进行查询和过滤筛选。 在这种情况下，我们可以考虑使用Specification来简化我们的查询方式。 1.Specification的简单介绍Specification最早是由《Doma">
     
     
         
@@ -128,7 +128,7 @@
 
     </div>
     <div id="toc">
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#spring多条件查询方式——使用Specification"><span class="toc-number">1.</span> <span class="toc-text">spring多条件查询方式——使用Specification</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-Specification的简单介绍"><span class="toc-number">1.1.</span> <span class="toc-text">1.Specification的简单介绍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-引入一个例子。"><span class="toc-number">1.2.</span> <span class="toc-text">2.引入一个例子。</span></a></li></ol></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#spring多条件查询方式——使用Specification"><span class="toc-number">1.</span> <span class="toc-text">spring多条件查询方式——使用Specification</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-Specification的简单介绍"><span class="toc-number">1.1.</span> <span class="toc-text">1.Specification的简单介绍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-引入一个例子"><span class="toc-number">1.2.</span> <span class="toc-text">2.引入一个例子</span></a></li></ol></li></ol>
     </div>
   </span>
 </div>
@@ -163,10 +163,11 @@
 
   <div class="content" itemprop="articleBody">
     <p>本文主要介绍了使用Java中<code>Specification</code>的使用。</p>
-<h1 id="spring多条件查询方式——使用Specification"><a href="#spring多条件查询方式——使用Specification" class="headerlink" title="spring多条件查询方式——使用Specification"></a>spring多条件查询方式——使用Specification</h1><h2 id="1-Specification的简单介绍"><a href="#1-Specification的简单介绍" class="headerlink" title="1.Specification的简单介绍"></a>1.Specification的简单介绍</h2><p><code>Specification</code>最早是由<em>《Domain Driven Design》</em>中引入的。<br>这是一个接口，里面只有一个抽象方法。熟悉Java8的人可能知道，如果一个接口中只有一个抽象方法，那么这个接口实现的时候可以使用匿名接口类，并且更进一步地可以使用<code>lambda</code>。</p>
+<h1 id="spring多条件查询方式——使用Specification"><a href="#spring多条件查询方式——使用Specification" class="headerlink" title="spring多条件查询方式——使用Specification"></a>spring多条件查询方式——使用Specification</h1><p> 在很多实际场景中，我们不仅需要通过一个或两个条件进行相关的查询，而是可能通过多个过滤条件进行查询和过滤筛选。<br> 在这种情况下，我们可以考虑使用<code>Specification</code>来简化我们的查询方式。</p>
+<h2 id="1-Specification的简单介绍"><a href="#1-Specification的简单介绍" class="headerlink" title="1.Specification的简单介绍"></a>1.Specification的简单介绍</h2><p><code>Specification</code>最早是由<em>《Domain Driven Design》</em>中引入的。<br>这是一个接口，里面只有一个抽象方法。熟悉Java8的人可能知道，如果一个接口中只有一个抽象方法，那么这个接口实现的时候可以使用匿名接口类，并且更进一步地可以使用<code>lambda</code>。</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">Predicate <span class="title">toPredicate</span><span class="params">(Root&lt;T&gt; root, CriteriaQuery&lt;?&gt; query, CriteriaBuilder criteriaBuilder)</span></span>;</span><br></pre></td></tr></table></figure>
-<p>在本文中我不深入讲解原理，而是先讲讲如何使用最基本的查询。  </p>
-<h2 id="2-引入一个例子。"><a href="#2-引入一个例子。" class="headerlink" title="2.引入一个例子。"></a>2.引入一个例子。</h2>
+<p>在本文中我不深入讲解原理，而是先讲讲如何使用最基本的查询。</p>
+<h2 id="2-引入一个例子"><a href="#2-引入一个例子" class="headerlink" title="2.引入一个例子"></a>2.引入一个例子</h2>
   </div>
 </article>
 
@@ -190,7 +191,7 @@
     </div>
 
     <div id="toc-footer" style="display: none">
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#spring多条件查询方式——使用Specification"><span class="toc-number">1.</span> <span class="toc-text">spring多条件查询方式——使用Specification</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-Specification的简单介绍"><span class="toc-number">1.1.</span> <span class="toc-text">1.Specification的简单介绍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-引入一个例子。"><span class="toc-number">1.2.</span> <span class="toc-text">2.引入一个例子。</span></a></li></ol></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#spring多条件查询方式——使用Specification"><span class="toc-number">1.</span> <span class="toc-text">spring多条件查询方式——使用Specification</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-Specification的简单介绍"><span class="toc-number">1.1.</span> <span class="toc-text">1.Specification的简单介绍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-引入一个例子"><span class="toc-number">1.2.</span> <span class="toc-text">2.引入一个例子</span></a></li></ol></li></ol>
     </div>
 
     <div id="share-footer" style="display: none">
