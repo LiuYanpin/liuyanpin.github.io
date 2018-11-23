@@ -6,17 +6,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="HandheldFriendly" content="True">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <meta name="description" content="left join举例来自牛客网的一个例子题目：查找所有员工的last_name和first_name以及对应的dept_name，也包括暂时没有分配部门的员工。12345678910CREATE TABLE `departments` (`dept_no` char(4) NOT NULL,`dept_name` varchar(40) NOT NULL,PRIMARY KEY (`dept_n">
+    <meta name="description" content="由于对JOIN机制不是太了解，因此需要重点学习一下。 举例person表   person_id lastname firstname     1 Adams John   2 Bush George   3 Carter Thomas   4 Dylin Bob    order表   order_id order_no person_id     1 77898 3   2 32456 1">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Different Kind of Join in Mysql">
+<meta property="og:title" content="MySQL中不同种类的JOIN">
 <meta property="og:url" content="http://liuyanping.com/2018/11/20/2018-11-20-different-kind-of-join-in-mysql/index.html">
-<meta property="og:site_name" content="There is no shortcut in life.">
-<meta property="og:description" content="left join举例来自牛客网的一个例子题目：查找所有员工的last_name和first_name以及对应的dept_name，也包括暂时没有分配部门的员工。12345678910CREATE TABLE `departments` (`dept_no` char(4) NOT NULL,`dept_name` varchar(40) NOT NULL,PRIMARY KEY (`dept_n">
+<meta property="og:site_name" content="大道至简">
+<meta property="og:description" content="由于对JOIN机制不是太了解，因此需要重点学习一下。 举例person表   person_id lastname firstname     1 Adams John   2 Bush George   3 Carter Thomas   4 Dylin Bob    order表   order_id order_no person_id     1 77898 3   2 32456 1">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-11-20T15:07:39.664Z">
+<meta property="og:updated_time" content="2018-11-21T08:44:12.555Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Different Kind of Join in Mysql">
-<meta name="twitter:description" content="left join举例来自牛客网的一个例子题目：查找所有员工的last_name和first_name以及对应的dept_name，也包括暂时没有分配部门的员工。12345678910CREATE TABLE `departments` (`dept_no` char(4) NOT NULL,`dept_name` varchar(40) NOT NULL,PRIMARY KEY (`dept_n">
+<meta name="twitter:title" content="MySQL中不同种类的JOIN">
+<meta name="twitter:description" content="由于对JOIN机制不是太了解，因此需要重点学习一下。 举例person表   person_id lastname firstname     1 Adams John   2 Bush George   3 Carter Thomas   4 Dylin Bob    order表   order_id order_no person_id     1 77898 3   2 32456 1">
     
     
         
@@ -36,7 +36,7 @@
         
     
     <!-- title -->
-    <title>Different Kind of Join in Mysql</title>
+    <title>MySQL中不同种类的JOIN</title>
     <!-- styles -->
     <link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="/lib/meslo-LG/styles.css">
@@ -51,7 +51,7 @@
 
 <body>
     <div class="banner">
-<div id="blogtitel" class="blogtitel">There is no shortcut in life.</div>
+<div id="blogtitel" class="blogtitel">大道至简</div>
 <ul id="wrapper" class="wrapper">
   <div class="sun">
     <div class="star"></div>
@@ -117,20 +117,20 @@
     <div id="share" style="display: none">
       <ul>
   <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://liuyanping.com/2018/11/20/2018-11-20-different-kind-of-join-in-mysql/"><i class="fa fa-facebook " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://twitter.com/share?url=http://liuyanping.com/2018/11/20/2018-11-20-different-kind-of-join-in-mysql/&text=Different Kind of Join in Mysql"><i class="fa fa-twitter " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://liuyanping.com/2018/11/20/2018-11-20-different-kind-of-join-in-mysql/&title=Different Kind of Join in Mysql"><i class="fa fa-linkedin " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://liuyanping.com/2018/11/20/2018-11-20-different-kind-of-join-in-mysql/&is_video=false&description=Different Kind of Join in Mysql"><i class="fa fa-pinterest " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="mailto:?subject=Different Kind of Join in Mysql&body=Check out this article: http://liuyanping.com/2018/11/20/2018-11-20-different-kind-of-join-in-mysql/"><i class="fa fa-envelope " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://getpocket.com/save?url=http://liuyanping.com/2018/11/20/2018-11-20-different-kind-of-join-in-mysql/&title=Different Kind of Join in Mysql"><i class="fa fa-get-pocket " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://reddit.com/submit?url=http://liuyanping.com/2018/11/20/2018-11-20-different-kind-of-join-in-mysql/&title=Different Kind of Join in Mysql"><i class="fa fa-reddit " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://liuyanping.com/2018/11/20/2018-11-20-different-kind-of-join-in-mysql/&title=Different Kind of Join in Mysql"><i class="fa fa-stumbleupon " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://digg.com/submit?url=http://liuyanping.com/2018/11/20/2018-11-20-different-kind-of-join-in-mysql/&title=Different Kind of Join in Mysql"><i class="fa fa-digg " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://liuyanping.com/2018/11/20/2018-11-20-different-kind-of-join-in-mysql/&name=Different Kind of Join in Mysql&description="><i class="fa fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://liuyanping.com/2018/11/20/2018-11-20-different-kind-of-join-in-mysql/&text=MySQL中不同种类的JOIN"><i class="fa fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://liuyanping.com/2018/11/20/2018-11-20-different-kind-of-join-in-mysql/&title=MySQL中不同种类的JOIN"><i class="fa fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://liuyanping.com/2018/11/20/2018-11-20-different-kind-of-join-in-mysql/&is_video=false&description=MySQL中不同种类的JOIN"><i class="fa fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=MySQL中不同种类的JOIN&body=Check out this article: http://liuyanping.com/2018/11/20/2018-11-20-different-kind-of-join-in-mysql/"><i class="fa fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://liuyanping.com/2018/11/20/2018-11-20-different-kind-of-join-in-mysql/&title=MySQL中不同种类的JOIN"><i class="fa fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://liuyanping.com/2018/11/20/2018-11-20-different-kind-of-join-in-mysql/&title=MySQL中不同种类的JOIN"><i class="fa fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://liuyanping.com/2018/11/20/2018-11-20-different-kind-of-join-in-mysql/&title=MySQL中不同种类的JOIN"><i class="fa fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://liuyanping.com/2018/11/20/2018-11-20-different-kind-of-join-in-mysql/&title=MySQL中不同种类的JOIN"><i class="fa fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://liuyanping.com/2018/11/20/2018-11-20-different-kind-of-join-in-mysql/&name=MySQL中不同种类的JOIN&description="><i class="fa fa-tumblr " aria-hidden="true"></i></a></li>
 </ul>
 
     </div>
     <div id="toc">
-      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#left-join举例"><span class="toc-number">1.</span> <span class="toc-text">left join举例</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#举例"><span class="toc-number">1.</span> <span class="toc-text">举例</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#person表"><span class="toc-number">1.1.</span> <span class="toc-text">person表</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#order表"><span class="toc-number">1.2.</span> <span class="toc-text">order表</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#场景1"><span class="toc-number">2.</span> <span class="toc-text">场景1</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#结果"><span class="toc-number">2.1.</span> <span class="toc-text">结果</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#场景2：使用JOIN"><span class="toc-number">3.</span> <span class="toc-text">场景2：使用JOIN</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#结果-1"><span class="toc-number">3.1.</span> <span class="toc-text">结果</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#场景3：使用left-join"><span class="toc-number">4.</span> <span class="toc-text">场景3：使用left join</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#场景4：使用RIGHT-JOIN"><span class="toc-number">5.</span> <span class="toc-text">场景4：使用RIGHT JOIN</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#left-join举例"><span class="toc-number">6.</span> <span class="toc-text">left join举例</span></a></li></ol>
     </div>
   </span>
 </div>
@@ -142,14 +142,14 @@
   <header>
     
     <h1 class="posttitle" itemprop="name headline">
-        Different Kind of Join in Mysql
+        MySQL中不同种类的JOIN
     </h1>
 
 
 
     <div class="meta">
       <span class="author" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-        <span itemprop="name">There is no shortcut in life.</span>
+        <span itemprop="name">大道至简</span>
       </span>
       
     <div class="postdate">
@@ -164,7 +164,302 @@
   
 
   <div class="content" itemprop="articleBody">
-    <h3 id="left-join举例"><a href="#left-join举例" class="headerlink" title="left join举例"></a>left join举例</h3><p>来自<a href="https://www.nowcoder.com/practice/5a7975fabe1146329cee4f670c27ad55?tpId=82&amp;tqId=29771&amp;rp=0&amp;ru=/ta/sql&amp;qru=/ta/sql/question-ranking" target="_blank" rel="noopener">牛客网</a>的一个例子<br>题目：查找所有员工的last_name和first_name以及对应的dept_name，也包括暂时没有分配部门的员工。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">CREATE TABLE `departments` (</span><br><span class="line">`dept_no` char(4) NOT NULL,</span><br><span class="line">`dept_name` varchar(40) NOT NULL,</span><br><span class="line">PRIMARY KEY (`dept_no`));</span><br><span class="line">CREATE TABLE `dept_emp` (</span><br><span class="line">`emp_no` int(11) NOT NULL,</span><br><span class="line">`dept_no` char(4) NOT NULL,</span><br><span class="line">`from_date` date NOT NULL,</span><br><span class="line">`to_date` date NOT NULL,</span><br><span class="line">PRIMARY KEY (`emp_no`,`dept_no`));</span><br></pre></td></tr></table></figure></p>
+    <p>由于对JOIN机制不是太了解，因此需要重点学习一下。</p>
+<h3 id="举例"><a href="#举例" class="headerlink" title="举例"></a>举例</h3><h4 id="person表"><a href="#person表" class="headerlink" title="person表"></a><code>person</code>表</h4><table>
+<thead>
+<tr>
+<th style="text-align:center">person_id</th>
+<th style="text-align:center">lastname</th>
+<th style="text-align:center">firstname</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">1</td>
+<td style="text-align:center">Adams</td>
+<td style="text-align:center">John</td>
+</tr>
+<tr>
+<td style="text-align:center">2</td>
+<td style="text-align:center">Bush</td>
+<td style="text-align:center">George</td>
+</tr>
+<tr>
+<td style="text-align:center">3</td>
+<td style="text-align:center">Carter</td>
+<td style="text-align:center">Thomas</td>
+</tr>
+<tr>
+<td style="text-align:center">4</td>
+<td style="text-align:center">Dylin</td>
+<td style="text-align:center">Bob</td>
+</tr>
+</tbody>
+</table>
+<h4 id="order表"><a href="#order表" class="headerlink" title="order表"></a><code>order</code>表</h4><table>
+<thead>
+<tr>
+<th style="text-align:center">order_id</th>
+<th style="text-align:center">order_no</th>
+<th style="text-align:center">person_id</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">1</td>
+<td style="text-align:center">77898</td>
+<td style="text-align:center">3</td>
+</tr>
+<tr>
+<td style="text-align:center">2</td>
+<td style="text-align:center">32456</td>
+<td style="text-align:center">1</td>
+</tr>
+<tr>
+<td style="text-align:center">3</td>
+<td style="text-align:center">12678</td>
+<td style="text-align:center">1</td>
+</tr>
+<tr>
+<td style="text-align:center">4</td>
+<td style="text-align:center">64524</td>
+<td style="text-align:center">3</td>
+</tr>
+<tr>
+<td style="text-align:center">5</td>
+<td style="text-align:center">23445</td>
+<td style="text-align:center">7</td>
+</tr>
+<tr>
+<td style="text-align:center">6</td>
+<td style="text-align:center">76544</td>
+<td style="text-align:center">9</td>
+</tr>
+</tbody>
+</table>
+<h3 id="场景1"><a href="#场景1" class="headerlink" title="场景1"></a>场景1</h3><p>我们需要获得：谁订购了产品，并且他们订购了什么产品？  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">select *</span><br><span class="line">from `person` as p, `order` as o</span><br><span class="line">where p.person_id = o.person_id;</span><br></pre></td></tr></table></figure>
+<h4 id="结果"><a href="#结果" class="headerlink" title="结果"></a>结果</h4><table>
+<thead>
+<tr>
+<th style="text-align:center">person_id</th>
+<th style="text-align:center">lastname</th>
+<th style="text-align:center">firstname</th>
+<th style="text-align:center">order_id</th>
+<th style="text-align:center">order_no</th>
+<th style="text-align:center">person_id</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">3</td>
+<td style="text-align:center">Carter</td>
+<td style="text-align:center">Thomas</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">77898</td>
+<td style="text-align:center">3</td>
+</tr>
+<tr>
+<td style="text-align:center">1</td>
+<td style="text-align:center">Adams</td>
+<td style="text-align:center">John</td>
+<td style="text-align:center">2</td>
+<td style="text-align:center">32456</td>
+<td style="text-align:center">1</td>
+</tr>
+<tr>
+<td style="text-align:center">1</td>
+<td style="text-align:center">Adams</td>
+<td style="text-align:center">John</td>
+<td style="text-align:center">3</td>
+<td style="text-align:center">12678</td>
+<td style="text-align:center">1</td>
+</tr>
+<tr>
+<td style="text-align:center">3</td>
+<td style="text-align:center">Carter</td>
+<td style="text-align:center">Thomas</td>
+<td style="text-align:center">4</td>
+<td style="text-align:center">64524</td>
+<td style="text-align:center">3</td>
+</tr>
+</tbody>
+</table>
+<h3 id="场景2：使用JOIN"><a href="#场景2：使用JOIN" class="headerlink" title="场景2：使用JOIN"></a>场景2：使用<code>JOIN</code></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">select p.lastname, p.firstname, o.order_no</span><br><span class="line">from `person` as p join</span><br><span class="line">    `order` as o</span><br><span class="line">on p.person_id = o.person_id;</span><br><span class="line"></span><br><span class="line">select p.lastname, p.firstname, o.order_no</span><br><span class="line">from `person` as p inner join</span><br><span class="line">    `order` as o</span><br><span class="line">on p.person_id = o.person_id;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">select p.lastname, p.firstname, o.order_no</span><br><span class="line">from `person` as p cross join</span><br><span class="line">    `order` as o</span><br><span class="line">on p.person_id = o.person_id;</span><br></pre></td></tr></table></figure>
+<h4 id="结果-1"><a href="#结果-1" class="headerlink" title="结果"></a>结果</h4><table>
+<thead>
+<tr>
+<th style="text-align:center">person_id</th>
+<th style="text-align:center">lastname</th>
+<th style="text-align:center">firstname</th>
+<th style="text-align:center">order_id</th>
+<th style="text-align:center">order_no</th>
+<th style="text-align:center">person_id</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">3</td>
+<td style="text-align:center">Carter</td>
+<td style="text-align:center">Thomas</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">77898</td>
+<td style="text-align:center">3</td>
+</tr>
+<tr>
+<td style="text-align:center">1</td>
+<td style="text-align:center">Adams</td>
+<td style="text-align:center">John</td>
+<td style="text-align:center">2</td>
+<td style="text-align:center">32456</td>
+<td style="text-align:center">1</td>
+</tr>
+<tr>
+<td style="text-align:center">1</td>
+<td style="text-align:center">Adams</td>
+<td style="text-align:center">John</td>
+<td style="text-align:center">3</td>
+<td style="text-align:center">12678</td>
+<td style="text-align:center">1</td>
+</tr>
+<tr>
+<td style="text-align:center">3</td>
+<td style="text-align:center">Carter</td>
+<td style="text-align:center">Thomas</td>
+<td style="text-align:center">4</td>
+<td style="text-align:center">64524</td>
+<td style="text-align:center">3</td>
+</tr>
+</tbody>
+</table>
+<p>JOIN: 如果表中有至少一个匹配，则返回行。</p>
+<h3 id="场景3：使用left-join"><a href="#场景3：使用left-join" class="headerlink" title="场景3：使用left join"></a>场景3：使用<code>left join</code></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">select p.lastname, p.firstname, o.order_no</span><br><span class="line">from `person` as p left join</span><br><span class="line">    `order` as o</span><br><span class="line">on p.person_id = o.person_id;</span><br></pre></td></tr></table></figure>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">person_id</th>
+<th style="text-align:center">lastname</th>
+<th style="text-align:center">firstname</th>
+<th style="text-align:center">order_id</th>
+<th style="text-align:center">order_no</th>
+<th style="text-align:center">person_id</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">3</td>
+<td style="text-align:center">Carter</td>
+<td style="text-align:center">Thomas</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">77898</td>
+<td style="text-align:center">3</td>
+</tr>
+<tr>
+<td style="text-align:center">1</td>
+<td style="text-align:center">Adams</td>
+<td style="text-align:center">John</td>
+<td style="text-align:center">2</td>
+<td style="text-align:center">32456</td>
+<td style="text-align:center">1</td>
+</tr>
+<tr>
+<td style="text-align:center">1</td>
+<td style="text-align:center">Adams</td>
+<td style="text-align:center">John</td>
+<td style="text-align:center">3</td>
+<td style="text-align:center">12678</td>
+<td style="text-align:center">1</td>
+</tr>
+<tr>
+<td style="text-align:center">3</td>
+<td style="text-align:center">Carter</td>
+<td style="text-align:center">Thomas</td>
+<td style="text-align:center">4</td>
+<td style="text-align:center">64524</td>
+<td style="text-align:center">3</td>
+</tr>
+<tr>
+<td style="text-align:center">2</td>
+<td style="text-align:center">Bush</td>
+<td style="text-align:center">George</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">4</td>
+<td style="text-align:center">Dylin</td>
+<td style="text-align:center">Bob</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+</tbody>
+</table>
+<p>LEFT JOIN: 即使右表中没有匹配，也从左表返回所有的行</p>
+<h3 id="场景4：使用RIGHT-JOIN"><a href="#场景4：使用RIGHT-JOIN" class="headerlink" title="场景4：使用RIGHT JOIN"></a>场景4：使用<code>RIGHT JOIN</code></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">select *</span><br><span class="line">from `person` as p right join</span><br><span class="line">    `order` as o</span><br><span class="line">on p.person_id = o.person_id;</span><br></pre></td></tr></table></figure>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">person_id</th>
+<th style="text-align:center">lastname</th>
+<th style="text-align:center">firstname</th>
+<th style="text-align:center">order_id</th>
+<th style="text-align:center">order_no</th>
+<th style="text-align:center">person_id</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">1</td>
+<td style="text-align:center">Adams</td>
+<td style="text-align:center">John</td>
+<td style="text-align:center">2</td>
+<td style="text-align:center">32456</td>
+<td style="text-align:center">1</td>
+</tr>
+<tr>
+<td style="text-align:center">1</td>
+<td style="text-align:center">Adams</td>
+<td style="text-align:center">John</td>
+<td style="text-align:center">3</td>
+<td style="text-align:center">12678</td>
+<td style="text-align:center">1</td>
+</tr>
+<tr>
+<td style="text-align:center">3</td>
+<td style="text-align:center">Carter</td>
+<td style="text-align:center">Thomas</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">77898</td>
+<td style="text-align:center">3</td>
+</tr>
+<tr>
+<td style="text-align:center">3</td>
+<td style="text-align:center">Carter</td>
+<td style="text-align:center">Thomas</td>
+<td style="text-align:center">4</td>
+<td style="text-align:center">64524</td>
+<td style="text-align:center">3</td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center">5</td>
+<td style="text-align:center">23445</td>
+<td style="text-align:center">7</td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center">6</td>
+<td style="text-align:center">76544</td>
+<td style="text-align:center">9</td>
+</tr>
+</tbody>
+</table>
+<h3 id="left-join举例"><a href="#left-join举例" class="headerlink" title="left join举例"></a>left join举例</h3><p>来自<a href="https://www.nowcoder.com/practice/5a7975fabe1146329cee4f670c27ad55?tpId=82&amp;tqId=29771&amp;rp=0&amp;ru=/ta/sql&amp;qru=/ta/sql/question-ranking" target="_blank" rel="noopener">牛客网</a>的一个例子<br>题目：查找所有员工的last_name和first_name以及对应的dept_name，也包括暂时没有分配部门的员工。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">CREATE TABLE `departments` (</span><br><span class="line">`dept_no` char(4) NOT NULL,</span><br><span class="line">`dept_name` varchar(40) NOT NULL,</span><br><span class="line">PRIMARY KEY (`dept_no`));</span><br><span class="line">CREATE TABLE `dept_emp` (</span><br><span class="line">`emp_no` int(11) NOT NULL,</span><br><span class="line">`dept_no` char(4) NOT NULL,</span><br><span class="line">`from_date` date NOT NULL,</span><br><span class="line">`to_date` date NOT NULL,</span><br><span class="line">PRIMARY KEY (`emp_no`,`dept_no`));</span><br></pre></td></tr></table></figure></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">CREATE TABLE `employees` (</span><br><span class="line">`emp_no` int(11) NOT NULL,</span><br><span class="line">`birth_date` date NOT NULL,</span><br><span class="line">`first_name` varchar(14) NOT NULL,</span><br><span class="line">`last_name` varchar(16) NOT NULL,</span><br><span class="line">`gender` char(1) NOT NULL,</span><br><span class="line">`hire_date` date NOT NULL,</span><br><span class="line">PRIMARY KEY (`emp_no`));</span><br></pre></td></tr></table></figure>
 <p>我的答案<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">select e.last_name, e.first_name, d.dept_name</span><br><span class="line">from employees AS e </span><br><span class="line">left join dept_emp </span><br><span class="line">on e.emp_no = dept_emp.emp_no</span><br><span class="line">left join departments as d</span><br><span class="line">on dept_emp.dept_no = d.dept_no;</span><br></pre></td></tr></table></figure></p>
 
@@ -191,21 +486,21 @@
     </div>
 
     <div id="toc-footer" style="display: none">
-      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#left-join举例"><span class="toc-number">1.</span> <span class="toc-text">left join举例</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#举例"><span class="toc-number">1.</span> <span class="toc-text">举例</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#person表"><span class="toc-number">1.1.</span> <span class="toc-text">person表</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#order表"><span class="toc-number">1.2.</span> <span class="toc-text">order表</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#场景1"><span class="toc-number">2.</span> <span class="toc-text">场景1</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#结果"><span class="toc-number">2.1.</span> <span class="toc-text">结果</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#场景2：使用JOIN"><span class="toc-number">3.</span> <span class="toc-text">场景2：使用JOIN</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#结果-1"><span class="toc-number">3.1.</span> <span class="toc-text">结果</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#场景3：使用left-join"><span class="toc-number">4.</span> <span class="toc-text">场景3：使用left join</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#场景4：使用RIGHT-JOIN"><span class="toc-number">5.</span> <span class="toc-text">场景4：使用RIGHT JOIN</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#left-join举例"><span class="toc-number">6.</span> <span class="toc-text">left join举例</span></a></li></ol>
     </div>
 
     <div id="share-footer" style="display: none">
       <ul>
   <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://liuyanping.com/2018/11/20/2018-11-20-different-kind-of-join-in-mysql/"><i class="fa fa-facebook fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://twitter.com/share?url=http://liuyanping.com/2018/11/20/2018-11-20-different-kind-of-join-in-mysql/&text=Different Kind of Join in Mysql"><i class="fa fa-twitter fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://liuyanping.com/2018/11/20/2018-11-20-different-kind-of-join-in-mysql/&title=Different Kind of Join in Mysql"><i class="fa fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://liuyanping.com/2018/11/20/2018-11-20-different-kind-of-join-in-mysql/&is_video=false&description=Different Kind of Join in Mysql"><i class="fa fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="mailto:?subject=Different Kind of Join in Mysql&body=Check out this article: http://liuyanping.com/2018/11/20/2018-11-20-different-kind-of-join-in-mysql/"><i class="fa fa-envelope fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://getpocket.com/save?url=http://liuyanping.com/2018/11/20/2018-11-20-different-kind-of-join-in-mysql/&title=Different Kind of Join in Mysql"><i class="fa fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://reddit.com/submit?url=http://liuyanping.com/2018/11/20/2018-11-20-different-kind-of-join-in-mysql/&title=Different Kind of Join in Mysql"><i class="fa fa-reddit fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://liuyanping.com/2018/11/20/2018-11-20-different-kind-of-join-in-mysql/&title=Different Kind of Join in Mysql"><i class="fa fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://digg.com/submit?url=http://liuyanping.com/2018/11/20/2018-11-20-different-kind-of-join-in-mysql/&title=Different Kind of Join in Mysql"><i class="fa fa-digg fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://liuyanping.com/2018/11/20/2018-11-20-different-kind-of-join-in-mysql/&name=Different Kind of Join in Mysql&description="><i class="fa fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://liuyanping.com/2018/11/20/2018-11-20-different-kind-of-join-in-mysql/&text=MySQL中不同种类的JOIN"><i class="fa fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://liuyanping.com/2018/11/20/2018-11-20-different-kind-of-join-in-mysql/&title=MySQL中不同种类的JOIN"><i class="fa fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://liuyanping.com/2018/11/20/2018-11-20-different-kind-of-join-in-mysql/&is_video=false&description=MySQL中不同种类的JOIN"><i class="fa fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=MySQL中不同种类的JOIN&body=Check out this article: http://liuyanping.com/2018/11/20/2018-11-20-different-kind-of-join-in-mysql/"><i class="fa fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://liuyanping.com/2018/11/20/2018-11-20-different-kind-of-join-in-mysql/&title=MySQL中不同种类的JOIN"><i class="fa fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://liuyanping.com/2018/11/20/2018-11-20-different-kind-of-join-in-mysql/&title=MySQL中不同种类的JOIN"><i class="fa fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://liuyanping.com/2018/11/20/2018-11-20-different-kind-of-join-in-mysql/&title=MySQL中不同种类的JOIN"><i class="fa fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://liuyanping.com/2018/11/20/2018-11-20-different-kind-of-join-in-mysql/&title=MySQL中不同种类的JOIN"><i class="fa fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://liuyanping.com/2018/11/20/2018-11-20-different-kind-of-join-in-mysql/&name=MySQL中不同种类的JOIN&description="><i class="fa fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
 </ul>
 
     </div>
