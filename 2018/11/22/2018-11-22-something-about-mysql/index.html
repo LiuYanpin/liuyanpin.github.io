@@ -14,7 +14,7 @@
 <meta property="og:description" content="连接数据库mysql -u root -p JOIN 按照功能大致分为如下三类： INNER JOIN（内连接,或等值连接）：获取两个表中字段匹配关系的记录。 LEFT JOIN（左连接）：获取左表所有记录，即使右表没有对应匹配的记录。 RIGHT JOIN（右连接）： 与 LEFT JOIN 相反，用于获取右表所有记录，即使左表没有对应匹配的记录。    MySQL中处理NULL使用IS NU">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="http://liuyanping.com/2018/11/22/2018-11-22-something-about-mysql/join.jpg">
-<meta property="og:updated_time" content="2018-11-23T02:13:11.884Z">
+<meta property="og:updated_time" content="2018-11-26T12:18:58.638Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="MySQL二三事">
 <meta name="twitter:description" content="连接数据库mysql -u root -p JOIN 按照功能大致分为如下三类： INNER JOIN（内连接,或等值连接）：获取两个表中字段匹配关系的记录。 LEFT JOIN（左连接）：获取左表所有记录，即使右表没有对应匹配的记录。 RIGHT JOIN（右连接）： 与 LEFT JOIN 相反，用于获取右表所有记录，即使左表没有对应匹配的记录。    MySQL中处理NULL使用IS NU">
@@ -132,7 +132,7 @@
 
     </div>
     <div id="toc">
-      
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#MySQL中的坑"><span class="toc-number">1.</span> <span class="toc-text">MySQL中的坑</span></a></li></ol>
     </div>
   </span>
 </div>
@@ -176,7 +176,9 @@
 <img src="/2018/11/22/2018-11-22-something-about-mysql/join.jpg" title="mysql join">
 <ul>
 <li>MySQL中处理NULL使用IS NULL和IS NOT NULL运算符。</li>
+<li>在MySQL数据表中设置指定的字段为 <code>PRIMARY KEY（主键）</code> 或者 <code>UNIQUE（唯一）</code> 索引来保证数据的唯一性。</li>
 </ul>
+<h3 id="MySQL中的坑"><a href="#MySQL中的坑" class="headerlink" title="MySQL中的坑"></a>MySQL中的坑</h3><p>有关编码方面的坑有很多。<br>今天（2018-11-26）遇到一个坑。是关于导入文件的。<br>我从<code>Excel</code>中将包含中文的表格导出为<code>.csv</code>格式的文件，然后将其导入<code>DataGrip</code>时，中文无法显示。<br>而且将某一个字段改成中文的内容也无法保存，而改成英文的就可以保存。<br>我在导入文件的时候就特意选择了<code>utf-8</code>编码。所以很疑惑问题出在哪里。<br>后来几经周折，发现在新建表的时候有必要显示地将表的编码设为<code>utf-8</code>。<br>也就是加上了这样一句话<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">DEFAULT CHARSET=utf8;</span><br></pre></td></tr></table></figure></p>
 
   </div>
 </article>
@@ -201,7 +203,7 @@
     </div>
 
     <div id="toc-footer" style="display: none">
-      
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#MySQL中的坑"><span class="toc-number">1.</span> <span class="toc-text">MySQL中的坑</span></a></li></ol>
     </div>
 
     <div id="share-footer" style="display: none">
