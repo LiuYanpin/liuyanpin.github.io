@@ -14,7 +14,7 @@
 <meta property="og:site_name" content="大道至简">
 <meta property="og:description" content="DCI：Data, Context, and Interaction。MVC的发明者Trygve Reenskaug发明的。DCI： 一种范式。DCI的类是静态的。不描述系统行为。系统行为是Context，每一种上下文实现了一个系统操作。被用例Use Case驱动。上下文压缩了一堆交互的对象。这些对象由它们在交互中扮演的角色所代表。  DCI要解决什么问题：传统OO中的算法会在不同文件中，DCI只">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-12-03T08:13:50.171Z">
+<meta property="og:updated_time" content="2018-12-03T09:00:01.500Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="DCI">
 <meta name="twitter:description" content="DCI：Data, Context, and Interaction。MVC的发明者Trygve Reenskaug发明的。DCI： 一种范式。DCI的类是静态的。不描述系统行为。系统行为是Context，每一种上下文实现了一个系统操作。被用例Use Case驱动。上下文压缩了一堆交互的对象。这些对象由它们在交互中扮演的角色所代表。  DCI要解决什么问题：传统OO中的算法会在不同文件中，DCI只">
@@ -181,12 +181,23 @@
 <li>domain driven design里面有两种技术：aggregates, repositories.</li>
 <li><p>Context是什么?描述interactions交互的概念。是一个包含所有给定用例的类。</p>
 </li>
-<li><p>Java中没得到体现？</p>
+<li><p>Java中没得到体现？<br>目前暂时没有Java实现的例子。</p>
 </li>
-<li><p>固定行为和上下文行为。所有的业务逻辑都在上下文中。</p>
-</li>
-<li>Actor是在上下文中体现的。数据对象当成参数传入。</li>
 </ul>
+<ul>
+<li>固定行为和上下文行为。所有的业务逻辑都在上下文中。</li>
+<li><p>Actor是在上下文中体现的。数据对象当成参数传入。</p>
+</li>
+<li><p>DCI认为方法属于use case的一部分，而不是domain object的一部分。</p>
+</li>
+<li>use-case特性的代码在<code>roles</code>中。</li>
+<li>执行的时候在上下文中才知道一个类关联的其他类是哪些。</li>
+<li>DCI中没有collaboration合作，只有服务，调用各个方法。</li>
+</ul>
+<p>DCI separates a program into different perspectives where each perspective focuses on certain system properties. </p>
+<p>Code in the Data perspective specifies how information is represented by stand-alone objects.</p>
+<p>Code in the Context perspective specifies runtime networks of interconnected objects as similar structures of interconnected roles.</p>
+<p>Code in the Interaction perspective specifies how the networked objects collaborate to achieve the system behavior.</p>
 
   </div>
 </article>
