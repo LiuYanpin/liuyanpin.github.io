@@ -6,17 +6,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="HandheldFriendly" content="True">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <meta name="description" content="Producing发信息。只发不收。 queue相当于一个邮箱。只在RabbitMQ中存在。没有约束条件（除了内存容量）。 Consuming等带接收信息的一个程序。">
+    <meta name="description" content="C4 代表上下文（Context）、容器（Container）、组件（Component）和代码（Code）。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="RabbitMQ入门">
-<meta property="og:url" content="http://liuyanping.com/2018/12/03/2018-12-03-RabbitMQ/index.html">
+<meta property="og:title" content="C4 Model-C4 模型">
+<meta property="og:url" content="http://liuyanping.com/2018/12/04/2018-12-04-C4Model/index.html">
 <meta property="og:site_name" content="大道至简">
-<meta property="og:description" content="Producing发信息。只发不收。 queue相当于一个邮箱。只在RabbitMQ中存在。没有约束条件（除了内存容量）。 Consuming等带接收信息的一个程序。">
+<meta property="og:description" content="C4 代表上下文（Context）、容器（Container）、组件（Component）和代码（Code）。">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-12-04T02:14:33.189Z">
+<meta property="og:updated_time" content="2018-12-04T07:12:05.809Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="RabbitMQ入门">
-<meta name="twitter:description" content="Producing发信息。只发不收。 queue相当于一个邮箱。只在RabbitMQ中存在。没有约束条件（除了内存容量）。 Consuming等带接收信息的一个程序。">
+<meta name="twitter:title" content="C4 Model-C4 模型">
+<meta name="twitter:description" content="C4 代表上下文（Context）、容器（Container）、组件（Component）和代码（Code）。">
     
     
         
@@ -36,7 +36,7 @@
         
     
     <!-- title -->
-    <title>RabbitMQ入门</title>
+    <title>C4 Model-C4 模型</title>
     <!-- styles -->
     <link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="/lib/meslo-LG/styles.css">
@@ -100,10 +100,10 @@
     <span id="actions">
       <ul>
         
-        <li><a class="icon" href="/2018/12/04/2018-12-04-C4Model/"><i class="fa fa-chevron-left" aria-hidden="true" onmouseover="$("#i-prev").toggle();" onmouseout="$("#i-prev").toggle();"></i></a></li>
+        <li><a class="icon" href="/2018/12/04/2018-12-04-agilemanifesto/"><i class="fa fa-chevron-left" aria-hidden="true" onmouseover="$("#i-prev").toggle();" onmouseout="$("#i-prev").toggle();"></i></a></li>
         
         
-        <li><a class="icon" href="/2018/12/03/2018-12-03-MircoService-beginning/"><i class="fa fa-chevron-right" aria-hidden="true" onmouseover="$("#i-next").toggle();" onmouseout="$("#i-next").toggle();"></i></a></li>
+        <li><a class="icon" href="/2018/12/03/2018-12-03-RabbitMQ/"><i class="fa fa-chevron-right" aria-hidden="true" onmouseover="$("#i-next").toggle();" onmouseout="$("#i-next").toggle();"></i></a></li>
         
         <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa fa-chevron-up" aria-hidden="true" onmouseover="$("#i-top").toggle();" onmouseout="$("#i-top").toggle();"></i></a></li>
         <li><a class="icon" href="#"><i class="fa fa-share-alt" aria-hidden="true" onmouseover="$("#i-share").toggle();" onmouseout="$("#i-share").toggle();" onclick="$("#share").toggle();return false;"></i></a></li>
@@ -116,16 +116,16 @@
     <br>
     <div id="share" style="display: none">
       <ul>
-  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://liuyanping.com/2018/12/03/2018-12-03-RabbitMQ/"><i class="fa fa-facebook " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://twitter.com/share?url=http://liuyanping.com/2018/12/03/2018-12-03-RabbitMQ/&text=RabbitMQ入门"><i class="fa fa-twitter " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://liuyanping.com/2018/12/03/2018-12-03-RabbitMQ/&title=RabbitMQ入门"><i class="fa fa-linkedin " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://liuyanping.com/2018/12/03/2018-12-03-RabbitMQ/&is_video=false&description=RabbitMQ入门"><i class="fa fa-pinterest " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="mailto:?subject=RabbitMQ入门&body=Check out this article: http://liuyanping.com/2018/12/03/2018-12-03-RabbitMQ/"><i class="fa fa-envelope " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://getpocket.com/save?url=http://liuyanping.com/2018/12/03/2018-12-03-RabbitMQ/&title=RabbitMQ入门"><i class="fa fa-get-pocket " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://reddit.com/submit?url=http://liuyanping.com/2018/12/03/2018-12-03-RabbitMQ/&title=RabbitMQ入门"><i class="fa fa-reddit " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://liuyanping.com/2018/12/03/2018-12-03-RabbitMQ/&title=RabbitMQ入门"><i class="fa fa-stumbleupon " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://digg.com/submit?url=http://liuyanping.com/2018/12/03/2018-12-03-RabbitMQ/&title=RabbitMQ入门"><i class="fa fa-digg " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://liuyanping.com/2018/12/03/2018-12-03-RabbitMQ/&name=RabbitMQ入门&description="><i class="fa fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://liuyanping.com/2018/12/04/2018-12-04-C4Model/"><i class="fa fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://liuyanping.com/2018/12/04/2018-12-04-C4Model/&text=C4 Model-C4 模型"><i class="fa fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://liuyanping.com/2018/12/04/2018-12-04-C4Model/&title=C4 Model-C4 模型"><i class="fa fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://liuyanping.com/2018/12/04/2018-12-04-C4Model/&is_video=false&description=C4 Model-C4 模型"><i class="fa fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=C4 Model-C4 模型&body=Check out this article: http://liuyanping.com/2018/12/04/2018-12-04-C4Model/"><i class="fa fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://liuyanping.com/2018/12/04/2018-12-04-C4Model/&title=C4 Model-C4 模型"><i class="fa fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://liuyanping.com/2018/12/04/2018-12-04-C4Model/&title=C4 Model-C4 模型"><i class="fa fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://liuyanping.com/2018/12/04/2018-12-04-C4Model/&title=C4 Model-C4 模型"><i class="fa fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://liuyanping.com/2018/12/04/2018-12-04-C4Model/&title=C4 Model-C4 模型"><i class="fa fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://liuyanping.com/2018/12/04/2018-12-04-C4Model/&name=C4 Model-C4 模型&description="><i class="fa fa-tumblr " aria-hidden="true"></i></a></li>
 </ul>
 
     </div>
@@ -142,7 +142,7 @@
   <header>
     
     <h1 class="posttitle" itemprop="name headline">
-        RabbitMQ入门
+        C4 Model-C4 模型
     </h1>
 
 
@@ -153,7 +153,7 @@
       </span>
       
     <div class="postdate">
-        <time datetime="2018-12-03T15:01:25.000Z" itemprop="datePublished">2018-12-03</time>
+        <time datetime="2018-12-04T06:45:58.000Z" itemprop="datePublished">2018-12-04</time>
     </div>
 
 
@@ -164,11 +164,7 @@
   
 
   <div class="content" itemprop="articleBody">
-    <ul>
-<li>Producing<br>发信息。只发不收。</li>
-<li>queue<br>相当于一个邮箱。只在RabbitMQ中存在。没有约束条件（除了内存容量）。</li>
-<li>Consuming<br>等带接收信息的一个程序。</li>
-</ul>
+    <p>C4 代表上下文（Context）、容器（Container）、组件（Component）和代码（Code）。</p>
 
   </div>
 </article>
@@ -198,16 +194,16 @@
 
     <div id="share-footer" style="display: none">
       <ul>
-  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://liuyanping.com/2018/12/03/2018-12-03-RabbitMQ/"><i class="fa fa-facebook fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://twitter.com/share?url=http://liuyanping.com/2018/12/03/2018-12-03-RabbitMQ/&text=RabbitMQ入门"><i class="fa fa-twitter fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://liuyanping.com/2018/12/03/2018-12-03-RabbitMQ/&title=RabbitMQ入门"><i class="fa fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://liuyanping.com/2018/12/03/2018-12-03-RabbitMQ/&is_video=false&description=RabbitMQ入门"><i class="fa fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="mailto:?subject=RabbitMQ入门&body=Check out this article: http://liuyanping.com/2018/12/03/2018-12-03-RabbitMQ/"><i class="fa fa-envelope fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://getpocket.com/save?url=http://liuyanping.com/2018/12/03/2018-12-03-RabbitMQ/&title=RabbitMQ入门"><i class="fa fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://reddit.com/submit?url=http://liuyanping.com/2018/12/03/2018-12-03-RabbitMQ/&title=RabbitMQ入门"><i class="fa fa-reddit fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://liuyanping.com/2018/12/03/2018-12-03-RabbitMQ/&title=RabbitMQ入门"><i class="fa fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://digg.com/submit?url=http://liuyanping.com/2018/12/03/2018-12-03-RabbitMQ/&title=RabbitMQ入门"><i class="fa fa-digg fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://liuyanping.com/2018/12/03/2018-12-03-RabbitMQ/&name=RabbitMQ入门&description="><i class="fa fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://liuyanping.com/2018/12/04/2018-12-04-C4Model/"><i class="fa fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://liuyanping.com/2018/12/04/2018-12-04-C4Model/&text=C4 Model-C4 模型"><i class="fa fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://liuyanping.com/2018/12/04/2018-12-04-C4Model/&title=C4 Model-C4 模型"><i class="fa fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://liuyanping.com/2018/12/04/2018-12-04-C4Model/&is_video=false&description=C4 Model-C4 模型"><i class="fa fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=C4 Model-C4 模型&body=Check out this article: http://liuyanping.com/2018/12/04/2018-12-04-C4Model/"><i class="fa fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://liuyanping.com/2018/12/04/2018-12-04-C4Model/&title=C4 Model-C4 模型"><i class="fa fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://liuyanping.com/2018/12/04/2018-12-04-C4Model/&title=C4 Model-C4 模型"><i class="fa fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://liuyanping.com/2018/12/04/2018-12-04-C4Model/&title=C4 Model-C4 模型"><i class="fa fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://liuyanping.com/2018/12/04/2018-12-04-C4Model/&title=C4 Model-C4 模型"><i class="fa fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://liuyanping.com/2018/12/04/2018-12-04-C4Model/&name=C4 Model-C4 模型&description="><i class="fa fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
 </ul>
 
     </div>
