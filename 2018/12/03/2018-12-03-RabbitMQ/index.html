@@ -6,14 +6,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="HandheldFriendly" content="True">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <meta property="og:type" content="article">
-<meta property="og:title" content="敏捷开发中的实践">
-<meta property="og:url" content="http://liuyanping.com/2018/12/03/2018-12-03-agile-practice/index.html">
+    <meta name="description" content="Producing发信息。只发不收。 queue相当于一个邮箱。只在RabbitMQ中存在。没有约束条件（除了内存容量）。 Consuming等带接收信息的一个程序。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="RabbitMQ入门">
+<meta property="og:url" content="http://liuyanping.com/2018/12/03/2018-12-03-RabbitMQ/index.html">
 <meta property="og:site_name" content="大道至简">
+<meta property="og:description" content="Producing发信息。只发不收。 queue相当于一个邮箱。只在RabbitMQ中存在。没有约束条件（除了内存容量）。 Consuming等带接收信息的一个程序。">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-12-03T08:57:21.977Z">
+<meta property="og:updated_time" content="2018-12-04T02:14:33.189Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="敏捷开发中的实践">
+<meta name="twitter:title" content="RabbitMQ入门">
+<meta name="twitter:description" content="Producing发信息。只发不收。 queue相当于一个邮箱。只在RabbitMQ中存在。没有约束条件（除了内存容量）。 Consuming等带接收信息的一个程序。">
     
     
         
@@ -33,7 +36,7 @@
         
     
     <!-- title -->
-    <title>敏捷开发中的实践</title>
+    <title>RabbitMQ入门</title>
     <!-- styles -->
     <link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="/lib/meslo-LG/styles.css">
@@ -97,10 +100,8 @@
     <span id="actions">
       <ul>
         
-        <li><a class="icon" href="/2018/12/03/2018-12-03-MircoService-beginning/"><i class="fa fa-chevron-left" aria-hidden="true" onmouseover="$("#i-prev").toggle();" onmouseout="$("#i-prev").toggle();"></i></a></li>
         
-        
-        <li><a class="icon" href="/2018/12/03/2018-12-03-DCI/"><i class="fa fa-chevron-right" aria-hidden="true" onmouseover="$("#i-next").toggle();" onmouseout="$("#i-next").toggle();"></i></a></li>
+        <li><a class="icon" href="/2018/12/03/2018-12-03-MircoService-beginning/"><i class="fa fa-chevron-right" aria-hidden="true" onmouseover="$("#i-next").toggle();" onmouseout="$("#i-next").toggle();"></i></a></li>
         
         <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa fa-chevron-up" aria-hidden="true" onmouseover="$("#i-top").toggle();" onmouseout="$("#i-top").toggle();"></i></a></li>
         <li><a class="icon" href="#"><i class="fa fa-share-alt" aria-hidden="true" onmouseover="$("#i-share").toggle();" onmouseout="$("#i-share").toggle();" onclick="$("#share").toggle();return false;"></i></a></li>
@@ -113,16 +114,16 @@
     <br>
     <div id="share" style="display: none">
       <ul>
-  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://liuyanping.com/2018/12/03/2018-12-03-agile-practice/"><i class="fa fa-facebook " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://twitter.com/share?url=http://liuyanping.com/2018/12/03/2018-12-03-agile-practice/&text=敏捷开发中的实践"><i class="fa fa-twitter " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://liuyanping.com/2018/12/03/2018-12-03-agile-practice/&title=敏捷开发中的实践"><i class="fa fa-linkedin " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://liuyanping.com/2018/12/03/2018-12-03-agile-practice/&is_video=false&description=敏捷开发中的实践"><i class="fa fa-pinterest " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="mailto:?subject=敏捷开发中的实践&body=Check out this article: http://liuyanping.com/2018/12/03/2018-12-03-agile-practice/"><i class="fa fa-envelope " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://getpocket.com/save?url=http://liuyanping.com/2018/12/03/2018-12-03-agile-practice/&title=敏捷开发中的实践"><i class="fa fa-get-pocket " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://reddit.com/submit?url=http://liuyanping.com/2018/12/03/2018-12-03-agile-practice/&title=敏捷开发中的实践"><i class="fa fa-reddit " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://liuyanping.com/2018/12/03/2018-12-03-agile-practice/&title=敏捷开发中的实践"><i class="fa fa-stumbleupon " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://digg.com/submit?url=http://liuyanping.com/2018/12/03/2018-12-03-agile-practice/&title=敏捷开发中的实践"><i class="fa fa-digg " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://liuyanping.com/2018/12/03/2018-12-03-agile-practice/&name=敏捷开发中的实践&description="><i class="fa fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://liuyanping.com/2018/12/03/2018-12-03-RabbitMQ/"><i class="fa fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://liuyanping.com/2018/12/03/2018-12-03-RabbitMQ/&text=RabbitMQ入门"><i class="fa fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://liuyanping.com/2018/12/03/2018-12-03-RabbitMQ/&title=RabbitMQ入门"><i class="fa fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://liuyanping.com/2018/12/03/2018-12-03-RabbitMQ/&is_video=false&description=RabbitMQ入门"><i class="fa fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=RabbitMQ入门&body=Check out this article: http://liuyanping.com/2018/12/03/2018-12-03-RabbitMQ/"><i class="fa fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://liuyanping.com/2018/12/03/2018-12-03-RabbitMQ/&title=RabbitMQ入门"><i class="fa fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://liuyanping.com/2018/12/03/2018-12-03-RabbitMQ/&title=RabbitMQ入门"><i class="fa fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://liuyanping.com/2018/12/03/2018-12-03-RabbitMQ/&title=RabbitMQ入门"><i class="fa fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://liuyanping.com/2018/12/03/2018-12-03-RabbitMQ/&title=RabbitMQ入门"><i class="fa fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://liuyanping.com/2018/12/03/2018-12-03-RabbitMQ/&name=RabbitMQ入门&description="><i class="fa fa-tumblr " aria-hidden="true"></i></a></li>
 </ul>
 
     </div>
@@ -139,7 +140,7 @@
   <header>
     
     <h1 class="posttitle" itemprop="name headline">
-        敏捷开发中的实践
+        RabbitMQ入门
     </h1>
 
 
@@ -150,7 +151,7 @@
       </span>
       
     <div class="postdate">
-        <time datetime="2018-12-03T07:01:55.000Z" itemprop="datePublished">2018-12-03</time>
+        <time datetime="2018-12-03T15:01:25.000Z" itemprop="datePublished">2018-12-03</time>
     </div>
 
 
@@ -161,7 +162,12 @@
   
 
   <div class="content" itemprop="articleBody">
-    
+    <ul>
+<li>Producing<br>发信息。只发不收。</li>
+<li>queue<br>相当于一个邮箱。只在RabbitMQ中存在。没有约束条件（除了内存容量）。</li>
+<li>Consuming<br>等带接收信息的一个程序。</li>
+</ul>
+
   </div>
 </article>
 
@@ -190,16 +196,16 @@
 
     <div id="share-footer" style="display: none">
       <ul>
-  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://liuyanping.com/2018/12/03/2018-12-03-agile-practice/"><i class="fa fa-facebook fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://twitter.com/share?url=http://liuyanping.com/2018/12/03/2018-12-03-agile-practice/&text=敏捷开发中的实践"><i class="fa fa-twitter fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://liuyanping.com/2018/12/03/2018-12-03-agile-practice/&title=敏捷开发中的实践"><i class="fa fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://liuyanping.com/2018/12/03/2018-12-03-agile-practice/&is_video=false&description=敏捷开发中的实践"><i class="fa fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="mailto:?subject=敏捷开发中的实践&body=Check out this article: http://liuyanping.com/2018/12/03/2018-12-03-agile-practice/"><i class="fa fa-envelope fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://getpocket.com/save?url=http://liuyanping.com/2018/12/03/2018-12-03-agile-practice/&title=敏捷开发中的实践"><i class="fa fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://reddit.com/submit?url=http://liuyanping.com/2018/12/03/2018-12-03-agile-practice/&title=敏捷开发中的实践"><i class="fa fa-reddit fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://liuyanping.com/2018/12/03/2018-12-03-agile-practice/&title=敏捷开发中的实践"><i class="fa fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://digg.com/submit?url=http://liuyanping.com/2018/12/03/2018-12-03-agile-practice/&title=敏捷开发中的实践"><i class="fa fa-digg fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://liuyanping.com/2018/12/03/2018-12-03-agile-practice/&name=敏捷开发中的实践&description="><i class="fa fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://liuyanping.com/2018/12/03/2018-12-03-RabbitMQ/"><i class="fa fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://liuyanping.com/2018/12/03/2018-12-03-RabbitMQ/&text=RabbitMQ入门"><i class="fa fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://liuyanping.com/2018/12/03/2018-12-03-RabbitMQ/&title=RabbitMQ入门"><i class="fa fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://liuyanping.com/2018/12/03/2018-12-03-RabbitMQ/&is_video=false&description=RabbitMQ入门"><i class="fa fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=RabbitMQ入门&body=Check out this article: http://liuyanping.com/2018/12/03/2018-12-03-RabbitMQ/"><i class="fa fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://liuyanping.com/2018/12/03/2018-12-03-RabbitMQ/&title=RabbitMQ入门"><i class="fa fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://liuyanping.com/2018/12/03/2018-12-03-RabbitMQ/&title=RabbitMQ入门"><i class="fa fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://liuyanping.com/2018/12/03/2018-12-03-RabbitMQ/&title=RabbitMQ入门"><i class="fa fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://liuyanping.com/2018/12/03/2018-12-03-RabbitMQ/&title=RabbitMQ入门"><i class="fa fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://liuyanping.com/2018/12/03/2018-12-03-RabbitMQ/&name=RabbitMQ入门&description="><i class="fa fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
 </ul>
 
     </div>
