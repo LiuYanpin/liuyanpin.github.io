@@ -6,17 +6,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="HandheldFriendly" content="True">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <meta name="description" content="Producing发信息。只发不收。 queue相当于一个邮箱。只在RabbitMQ中存在。没有约束条件（除了内存容量）。 Consuming等带接收信息的一个程序。  Connection代表一个真实的TCP连接。  Channel代表一个Connection里面一个虚拟的连接（AMPQ）连接。一个TCP连接里面可以加载多个虚拟的">
+    <meta name="description" content="Producing发信息。只发不收。 queue相当于一个邮箱。只在RabbitMQ中存在。没有约束条件（除了内存容量）。 Consuming等待接收信息的一个程序。  Connection代表一个真实的TCP连接。  Channel代表一个Connection里面一个虚拟的连接（AMPQ）连接。一个TCP连接里面可以加载多个虚拟的连接。技术上来说，一个Channel就可以解决所有问题了。但是对">
 <meta property="og:type" content="article">
 <meta property="og:title" content="RabbitMQ入门">
 <meta property="og:url" content="http://liuyanping.com/2018/12/03/2018-12-03-RabbitMQ/index.html">
 <meta property="og:site_name" content="大道至简">
-<meta property="og:description" content="Producing发信息。只发不收。 queue相当于一个邮箱。只在RabbitMQ中存在。没有约束条件（除了内存容量）。 Consuming等带接收信息的一个程序。  Connection代表一个真实的TCP连接。  Channel代表一个Connection里面一个虚拟的连接（AMPQ）连接。一个TCP连接里面可以加载多个虚拟的">
+<meta property="og:description" content="Producing发信息。只发不收。 queue相当于一个邮箱。只在RabbitMQ中存在。没有约束条件（除了内存容量）。 Consuming等待接收信息的一个程序。  Connection代表一个真实的TCP连接。  Channel代表一个Connection里面一个虚拟的连接（AMPQ）连接。一个TCP连接里面可以加载多个虚拟的连接。技术上来说，一个Channel就可以解决所有问题了。但是对">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-12-07T02:43:13.317Z">
+<meta property="og:updated_time" content="2018-12-07T09:26:54.020Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="RabbitMQ入门">
-<meta name="twitter:description" content="Producing发信息。只发不收。 queue相当于一个邮箱。只在RabbitMQ中存在。没有约束条件（除了内存容量）。 Consuming等带接收信息的一个程序。  Connection代表一个真实的TCP连接。  Channel代表一个Connection里面一个虚拟的连接（AMPQ）连接。一个TCP连接里面可以加载多个虚拟的">
+<meta name="twitter:description" content="Producing发信息。只发不收。 queue相当于一个邮箱。只在RabbitMQ中存在。没有约束条件（除了内存容量）。 Consuming等待接收信息的一个程序。  Connection代表一个真实的TCP连接。  Channel代表一个Connection里面一个虚拟的连接（AMPQ）连接。一个TCP连接里面可以加载多个虚拟的连接。技术上来说，一个Channel就可以解决所有问题了。但是对">
     
     
         
@@ -167,12 +167,15 @@
     <ul>
 <li>Producing<br>发信息。只发不收。</li>
 <li>queue<br>相当于一个邮箱。只在RabbitMQ中存在。没有约束条件（除了内存容量）。</li>
-<li><p>Consuming<br>等带接收信息的一个程序。</p>
+<li><p>Consuming<br>等待接收信息的一个程序。</p>
 </li>
 <li><p>Connection<br>代表一个真实的TCP连接。</p>
 </li>
-<li>Channel代表一个Connection里面一个虚拟的连接（AMPQ）连接。<br>一个TCP连接里面可以加载多个虚拟的</li>
+<li>Channel<br>代表一个Connection里面一个虚拟的连接（AMPQ）连接。<br>一个TCP连接里面可以加载多个虚拟的连接。技术上来说，一个Channel就可以解决所有问题了。但是对于多线程来说，建议每个Thread配置一个Channel。<br>Channel被设计成透明的。</li>
+<li>Queue<br>Channel与Queue之间没有直接关系。Channel是用于发送AMQP`命令的。</li>
+<li>Consumer</li>
 </ul>
+<p>关闭Connection连接就会关闭所有的Channel，关闭一个Channel就会关闭所有的Consumer。<br>取消一个Consumer是被允许的。</p>
 
   </div>
 </article>
