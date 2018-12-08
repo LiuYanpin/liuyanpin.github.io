@@ -14,7 +14,7 @@
 <meta property="og:description" content="Hello World第一个程序就没有跑出来。后来发现应该需要把脚本放在Body前面。  12345678910111213141516171819202122&amp;lt;!DOCTYPE html&amp;gt;&amp;lt;html lang=&amp;quot;en&amp;quot;&amp;gt;&amp;lt;head&amp;gt;  &amp;lt;meta charset=&amp;quot;UTF-8&amp;quot;&amp;gt;  &amp;lt;title&amp;gt">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="http://liuyanping.com/2018/12/08/2018-12-08-Vue-beginning/lifecycle.png">
-<meta property="og:updated_time" content="2018-12-08T08:54:44.304Z">
+<meta property="og:updated_time" content="2018-12-08T09:59:41.564Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Vue入门">
 <meta name="twitter:description" content="Hello World第一个程序就没有跑出来。后来发现应该需要把脚本放在Body前面。  12345678910111213141516171819202122&amp;lt;!DOCTYPE html&amp;gt;&amp;lt;html lang=&amp;quot;en&amp;quot;&amp;gt;&amp;lt;head&amp;gt;  &amp;lt;meta charset=&amp;quot;UTF-8&amp;quot;&amp;gt;  &amp;lt;title&amp;gt">
@@ -130,7 +130,7 @@
 
     </div>
     <div id="toc">
-      
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#模板语法"><span class="toc-number">1.</span> <span class="toc-text">模板语法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#插值"><span class="toc-number">1.1.</span> <span class="toc-text">插值</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#指令"><span class="toc-number">1.2.</span> <span class="toc-text">指令</span></a></li></ol></li></ol>
     </div>
   </span>
 </div>
@@ -190,6 +190,13 @@ template: &apos;&lt;li&gt;{{ todo.text }}&lt;/li&gt;&apos;
 <li><a href="https://cn.vuejs.org/v2/guide/instance.html" target="_blank" rel="noopener">生命周期</a></li>
 </ul>
 <img src="/2018/12/08/2018-12-08-Vue-beginning/lifecycle.png" title="lifecycle join">
+<h3 id="模板语法"><a href="#模板语法" class="headerlink" title="模板语法"></a>模板语法</h3><h4 id="插值"><a href="#插值" class="headerlink" title="插值"></a>插值</h4><ul>
+<li>双大括号形式<br><code>&lt;span&gt;Message: &lt;/span&gt;</code></li>
+<li>原始HTML<br><code>&lt;span v-html=&quot;rawHtml&quot;&gt;&lt;/span&gt;</code></li>
+<li>特性 ?<br><code>&lt;button v-bind:disabled=&quot;isButtonDisabled&quot;&gt;Button&lt;/button&gt;</code></li>
+<li>使用JavaScript表达式，每个绑定都只能包含单个表达式。<br>{<code>{ message.split(&#39;&#39;).reverse().join(&#39;&#39;) }}</code>  </li>
+</ul>
+<h4 id="指令"><a href="#指令" class="headerlink" title="指令"></a>指令</h4><p>指令特性的值预期是单个 JavaScript 表达式。指令的职责是，当表达式的值改变时，将其产生的连带影响，响应式地作用于 DOM。</p>
 
   </div>
 </article>
@@ -214,7 +221,7 @@ template: &apos;&lt;li&gt;{{ todo.text }}&lt;/li&gt;&apos;
     </div>
 
     <div id="toc-footer" style="display: none">
-      
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#模板语法"><span class="toc-number">1.</span> <span class="toc-text">模板语法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#插值"><span class="toc-number">1.1.</span> <span class="toc-text">插值</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#指令"><span class="toc-number">1.2.</span> <span class="toc-text">指令</span></a></li></ol></li></ol>
     </div>
 
     <div id="share-footer" style="display: none">
