@@ -8,15 +8,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta name="description" content="Hello World第一个程序就没有跑出来。后来发现应该需要把脚本放在Body前面。  12345678910111213141516171819202122&amp;lt;!DOCTYPE html&amp;gt;&amp;lt;html lang=&amp;quot;en&amp;quot;&amp;gt;&amp;lt;head&amp;gt;  &amp;lt;meta charset=&amp;quot;UTF-8&amp;quot;&amp;gt;  &amp;lt;title&amp;gt">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Vue入门采坑记">
+<meta property="og:title" content="Vue入门">
 <meta property="og:url" content="http://liuyanping.com/2018/12/08/2018-12-08-Vue-beginning/index.html">
 <meta property="og:site_name" content="大道至简">
 <meta property="og:description" content="Hello World第一个程序就没有跑出来。后来发现应该需要把脚本放在Body前面。  12345678910111213141516171819202122&amp;lt;!DOCTYPE html&amp;gt;&amp;lt;html lang=&amp;quot;en&amp;quot;&amp;gt;&amp;lt;head&amp;gt;  &amp;lt;meta charset=&amp;quot;UTF-8&amp;quot;&amp;gt;  &amp;lt;title&amp;gt">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-12-08T07:43:23.376Z">
+<meta property="og:image" content="http://liuyanping.com/2018/12/08/2018-12-08-Vue-beginning/lifecycle.png">
+<meta property="og:updated_time" content="2018-12-08T08:54:44.304Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Vue入门采坑记">
+<meta name="twitter:title" content="Vue入门">
 <meta name="twitter:description" content="Hello World第一个程序就没有跑出来。后来发现应该需要把脚本放在Body前面。  12345678910111213141516171819202122&amp;lt;!DOCTYPE html&amp;gt;&amp;lt;html lang=&amp;quot;en&amp;quot;&amp;gt;&amp;lt;head&amp;gt;  &amp;lt;meta charset=&amp;quot;UTF-8&amp;quot;&amp;gt;  &amp;lt;title&amp;gt">
+<meta name="twitter:image" content="http://liuyanping.com/2018/12/08/2018-12-08-Vue-beginning/lifecycle.png">
     
     
         
@@ -36,7 +38,7 @@
         
     
     <!-- title -->
-    <title>Vue入门采坑记</title>
+    <title>Vue入门</title>
     <!-- styles -->
     <link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="/lib/meslo-LG/styles.css">
@@ -115,15 +117,15 @@
     <div id="share" style="display: none">
       <ul>
   <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://liuyanping.com/2018/12/08/2018-12-08-Vue-beginning/"><i class="fa fa-facebook " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://twitter.com/share?url=http://liuyanping.com/2018/12/08/2018-12-08-Vue-beginning/&text=Vue入门采坑记"><i class="fa fa-twitter " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://liuyanping.com/2018/12/08/2018-12-08-Vue-beginning/&title=Vue入门采坑记"><i class="fa fa-linkedin " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://liuyanping.com/2018/12/08/2018-12-08-Vue-beginning/&is_video=false&description=Vue入门采坑记"><i class="fa fa-pinterest " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="mailto:?subject=Vue入门采坑记&body=Check out this article: http://liuyanping.com/2018/12/08/2018-12-08-Vue-beginning/"><i class="fa fa-envelope " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://getpocket.com/save?url=http://liuyanping.com/2018/12/08/2018-12-08-Vue-beginning/&title=Vue入门采坑记"><i class="fa fa-get-pocket " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://reddit.com/submit?url=http://liuyanping.com/2018/12/08/2018-12-08-Vue-beginning/&title=Vue入门采坑记"><i class="fa fa-reddit " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://liuyanping.com/2018/12/08/2018-12-08-Vue-beginning/&title=Vue入门采坑记"><i class="fa fa-stumbleupon " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://digg.com/submit?url=http://liuyanping.com/2018/12/08/2018-12-08-Vue-beginning/&title=Vue入门采坑记"><i class="fa fa-digg " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://liuyanping.com/2018/12/08/2018-12-08-Vue-beginning/&name=Vue入门采坑记&description="><i class="fa fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://liuyanping.com/2018/12/08/2018-12-08-Vue-beginning/&text=Vue入门"><i class="fa fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://liuyanping.com/2018/12/08/2018-12-08-Vue-beginning/&title=Vue入门"><i class="fa fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://liuyanping.com/2018/12/08/2018-12-08-Vue-beginning/&is_video=false&description=Vue入门"><i class="fa fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Vue入门&body=Check out this article: http://liuyanping.com/2018/12/08/2018-12-08-Vue-beginning/"><i class="fa fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://liuyanping.com/2018/12/08/2018-12-08-Vue-beginning/&title=Vue入门"><i class="fa fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://liuyanping.com/2018/12/08/2018-12-08-Vue-beginning/&title=Vue入门"><i class="fa fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://liuyanping.com/2018/12/08/2018-12-08-Vue-beginning/&title=Vue入门"><i class="fa fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://liuyanping.com/2018/12/08/2018-12-08-Vue-beginning/&title=Vue入门"><i class="fa fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://liuyanping.com/2018/12/08/2018-12-08-Vue-beginning/&name=Vue入门&description="><i class="fa fa-tumblr " aria-hidden="true"></i></a></li>
 </ul>
 
     </div>
@@ -140,7 +142,7 @@
   <header>
     
     <h1 class="posttitle" itemprop="name headline">
-        Vue入门采坑记
+        Vue入门
     </h1>
 
 
@@ -172,13 +174,22 @@
 <li><code>v-if</code></li>
 <li><code>v-for</code>循环指令</li>
 <li><code>v-on</code>监听事件指令</li>
-<li><code>v-model</code>数据双向绑定指令<br>在 Vue 里，一个组件本质上是一个拥有预定义选项的一个 Vue 实例。<pre><code class="vue">Vue.component(&apos;todo-item&apos;, {
+<li><p><code>v-model</code>数据双向绑定指令  </p>
+</li>
+<li><p>在 Vue 里，一个组件本质上是一个拥有预定义选项的一个 Vue 实例。</p>
+<pre><code class="vue">Vue.component(&apos;todo-item&apos;, {
 props: [&apos;todo&apos;],
 template: &apos;&lt;li&gt;{{ todo.text }}&lt;/li&gt;&apos;
 })
 </code></pre>
-子单元通过 prop 接口与父单元进行了良好的解耦。</li>
+<p>子单元通过 prop 接口与父单元进行了良好的解耦。</p>
+</li>
+<li><p>每个 Vue 应用都是通过用 Vue 函数创建一个新的 Vue 实例开始的。<br>一个 Vue 应用由一个通过 new Vue 创建的根 Vue 实例，以及可选的嵌套的、可复用的组件树组成。<br>你只需要明白所有的 Vue 组件都是 Vue 实例，并且接受相同的选项对象。<br>只有当实例被创建时 data 中存在的属性才是响应式的。<br>如果你知道你会在晚些时候需要一个属性，但是一开始它为空或不存在，那么你仅需要设置一些初始值。</p>
+</li>
+<li>不要在选项属性或回调上使用箭头函数。</li>
+<li><a href="https://cn.vuejs.org/v2/guide/instance.html" target="_blank" rel="noopener">生命周期</a></li>
 </ul>
+<img src="/2018/12/08/2018-12-08-Vue-beginning/lifecycle.png" title="lifecycle join">
 
   </div>
 </article>
@@ -209,15 +220,15 @@ template: &apos;&lt;li&gt;{{ todo.text }}&lt;/li&gt;&apos;
     <div id="share-footer" style="display: none">
       <ul>
   <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://liuyanping.com/2018/12/08/2018-12-08-Vue-beginning/"><i class="fa fa-facebook fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://twitter.com/share?url=http://liuyanping.com/2018/12/08/2018-12-08-Vue-beginning/&text=Vue入门采坑记"><i class="fa fa-twitter fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://liuyanping.com/2018/12/08/2018-12-08-Vue-beginning/&title=Vue入门采坑记"><i class="fa fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://liuyanping.com/2018/12/08/2018-12-08-Vue-beginning/&is_video=false&description=Vue入门采坑记"><i class="fa fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="mailto:?subject=Vue入门采坑记&body=Check out this article: http://liuyanping.com/2018/12/08/2018-12-08-Vue-beginning/"><i class="fa fa-envelope fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://getpocket.com/save?url=http://liuyanping.com/2018/12/08/2018-12-08-Vue-beginning/&title=Vue入门采坑记"><i class="fa fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://reddit.com/submit?url=http://liuyanping.com/2018/12/08/2018-12-08-Vue-beginning/&title=Vue入门采坑记"><i class="fa fa-reddit fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://liuyanping.com/2018/12/08/2018-12-08-Vue-beginning/&title=Vue入门采坑记"><i class="fa fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://digg.com/submit?url=http://liuyanping.com/2018/12/08/2018-12-08-Vue-beginning/&title=Vue入门采坑记"><i class="fa fa-digg fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://liuyanping.com/2018/12/08/2018-12-08-Vue-beginning/&name=Vue入门采坑记&description="><i class="fa fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://liuyanping.com/2018/12/08/2018-12-08-Vue-beginning/&text=Vue入门"><i class="fa fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://liuyanping.com/2018/12/08/2018-12-08-Vue-beginning/&title=Vue入门"><i class="fa fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://liuyanping.com/2018/12/08/2018-12-08-Vue-beginning/&is_video=false&description=Vue入门"><i class="fa fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Vue入门&body=Check out this article: http://liuyanping.com/2018/12/08/2018-12-08-Vue-beginning/"><i class="fa fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://liuyanping.com/2018/12/08/2018-12-08-Vue-beginning/&title=Vue入门"><i class="fa fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://liuyanping.com/2018/12/08/2018-12-08-Vue-beginning/&title=Vue入门"><i class="fa fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://liuyanping.com/2018/12/08/2018-12-08-Vue-beginning/&title=Vue入门"><i class="fa fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://liuyanping.com/2018/12/08/2018-12-08-Vue-beginning/&title=Vue入门"><i class="fa fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://liuyanping.com/2018/12/08/2018-12-08-Vue-beginning/&name=Vue入门&description="><i class="fa fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
 </ul>
 
     </div>
