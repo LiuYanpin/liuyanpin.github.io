@@ -6,19 +6,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="HandheldFriendly" content="True">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <meta name="description" content="Hello World第一个程序就没有跑出来。后来发现应该需要把脚本放在Body前面。  12345678910111213141516171819202122&amp;lt;!DOCTYPE html&amp;gt;&amp;lt;html lang=&amp;quot;en&amp;quot;&amp;gt;&amp;lt;head&amp;gt;  &amp;lt;meta charset=&amp;quot;UTF-8&amp;quot;&amp;gt;  &amp;lt;title&amp;gt">
+    <meta name="description" content="Hello World第一个程序就没有跑出来。后来发现应该需要把脚本放在Body前面。对此我的理解是：Vue 是先将对象渲染出来，然后再在已经渲染过的原始页面进行渲染。因为我在浏览器控制台的时候看到了延迟。  12345678910111213141516171819202122&amp;lt;!DOCTYPE html&amp;gt;&amp;lt;html lang=&amp;quot;en&amp;quot;&amp;gt;&amp;lt;he">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Vue入门">
 <meta property="og:url" content="http://liuyanping.com/2018/12/08/2018-12-08-Vue-beginning/index.html">
 <meta property="og:site_name" content="大道至简">
-<meta property="og:description" content="Hello World第一个程序就没有跑出来。后来发现应该需要把脚本放在Body前面。  12345678910111213141516171819202122&amp;lt;!DOCTYPE html&amp;gt;&amp;lt;html lang=&amp;quot;en&amp;quot;&amp;gt;&amp;lt;head&amp;gt;  &amp;lt;meta charset=&amp;quot;UTF-8&amp;quot;&amp;gt;  &amp;lt;title&amp;gt">
+<meta property="og:description" content="Hello World第一个程序就没有跑出来。后来发现应该需要把脚本放在Body前面。对此我的理解是：Vue 是先将对象渲染出来，然后再在已经渲染过的原始页面进行渲染。因为我在浏览器控制台的时候看到了延迟。  12345678910111213141516171819202122&amp;lt;!DOCTYPE html&amp;gt;&amp;lt;html lang=&amp;quot;en&amp;quot;&amp;gt;&amp;lt;he">
 <meta property="og:locale" content="en">
-<meta property="og:image" content="http://liuyanping.com/2018/12/08/2018-12-08-Vue-beginning/lifecycle.png">
-<meta property="og:updated_time" content="2018-12-08T09:59:41.564Z">
+<meta property="og:updated_time" content="2018-12-10T01:12:51.098Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Vue入门">
-<meta name="twitter:description" content="Hello World第一个程序就没有跑出来。后来发现应该需要把脚本放在Body前面。  12345678910111213141516171819202122&amp;lt;!DOCTYPE html&amp;gt;&amp;lt;html lang=&amp;quot;en&amp;quot;&amp;gt;&amp;lt;head&amp;gt;  &amp;lt;meta charset=&amp;quot;UTF-8&amp;quot;&amp;gt;  &amp;lt;title&amp;gt">
-<meta name="twitter:image" content="http://liuyanping.com/2018/12/08/2018-12-08-Vue-beginning/lifecycle.png">
+<meta name="twitter:description" content="Hello World第一个程序就没有跑出来。后来发现应该需要把脚本放在Body前面。对此我的理解是：Vue 是先将对象渲染出来，然后再在已经渲染过的原始页面进行渲染。因为我在浏览器控制台的时候看到了延迟。  12345678910111213141516171819202122&amp;lt;!DOCTYPE html&amp;gt;&amp;lt;html lang=&amp;quot;en&amp;quot;&amp;gt;&amp;lt;he">
     
     
         
@@ -130,7 +128,7 @@
 
     </div>
     <div id="toc">
-      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#模板语法"><span class="toc-number">1.</span> <span class="toc-text">模板语法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#插值"><span class="toc-number">1.1.</span> <span class="toc-text">插值</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#指令"><span class="toc-number">1.2.</span> <span class="toc-text">指令</span></a></li></ol></li></ol>
+      
     </div>
   </span>
 </div>
@@ -165,7 +163,7 @@
 
   <div class="content" itemprop="articleBody">
     <ul>
-<li>Hello World<br>第一个程序就没有跑出来。后来发现应该需要把脚本放在<code>Body</code>前面。</li>
+<li>Hello World<br>第一个程序就没有跑出来。后来发现应该需要把脚本放在<code>Body</code>前面。<br>对此我的理解是：Vue 是先将对象渲染出来，然后再在已经渲染过的原始页面进行渲染。<br>因为我在浏览器控制台的时候看到了延迟。</li>
 </ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">  &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">  &lt;title&gt;Title&lt;/title&gt;</span><br><span class="line">  &lt;script src=&quot;https://cdn.jsdelivr.net/npm/vue/dist/vue.js&quot;&gt;</span><br><span class="line">  &lt;/script&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;div id=&quot;app&quot;&gt;</span><br><span class="line">  &lt;p&gt;&#123;&#123; message &#125;&#125;&lt;/p&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">  new Vue(&#123;</span><br><span class="line">    el: &apos;#app&apos;,</span><br><span class="line">    data: &#123;</span><br><span class="line">      message: &apos;Hello Vue!&apos;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;)</span><br><span class="line">&lt;/script&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
 <ul>
@@ -177,26 +175,13 @@
 <li><p><code>v-model</code>数据双向绑定指令  </p>
 </li>
 <li><p>在 Vue 里，一个组件本质上是一个拥有预定义选项的一个 Vue 实例。</p>
-<pre><code class="vue">Vue.component(&apos;todo-item&apos;, {
-props: [&apos;todo&apos;],
-template: &apos;&lt;li&gt;{{ todo.text }}&lt;/li&gt;&apos;
-})
-</code></pre>
-<p>子单元通过 prop 接口与父单元进行了良好的解耦。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line">Vue.component(&apos;todo-item&apos;, &#123;</span><br><span class="line">  props: [&apos;todo&apos;],</span><br><span class="line">  template: &apos;&lt;li&gt;&#123;&#123; todo.text &#125;&#125;&lt;/li&gt;&apos;</span><br><span class="line">&#125;)</span><br><span class="line">```  </span><br><span class="line">子单元通过 prop 接口与父单元进行了良好的解耦。</span><br><span class="line"></span><br><span class="line">- 每个 Vue 应用都是通过用 Vue 函数创建一个新的 Vue 实例开始的。  </span><br><span class="line">一个 Vue 应用由一个通过 new Vue 创建的根 Vue 实例，以及可选的嵌套的、可复用的组件树组成。  </span><br><span class="line">你只需要明白所有的 Vue 组件都是 Vue 实例，并且接受相同的选项对象。  </span><br><span class="line">只有当实例被创建时 data 中存在的属性才是响应式的。</span><br><span class="line">如果你知道你会在晚些时候需要一个属性，但是一开始它为空或不存在，那么你仅需要设置一些初始值。</span><br><span class="line">- 不要在选项属性或回调上使用箭头函数。</span><br><span class="line">- [生命周期](https://cn.vuejs.org/v2/guide/instance.html)</span><br><span class="line"></span><br><span class="line">&#123;% asset_img lifecycle.png lifecycle join %&#125;</span><br><span class="line"></span><br><span class="line">### 模板语法  </span><br><span class="line"></span><br><span class="line">#### 插值  </span><br><span class="line"></span><br><span class="line">- 双大括号形式</span><br><span class="line">`&lt;span&gt;Message: &#123;&#123; msg &#125;&#125;&lt;/span&gt;`</span><br><span class="line">- 原始HTML</span><br><span class="line">`&lt;span v-html=&quot;rawHtml&quot;&gt;&lt;/span&gt;`</span><br><span class="line">- 特性 ? </span><br><span class="line">`&lt;button v-bind:disabled=&quot;isButtonDisabled&quot;&gt;Button&lt;/button&gt;`</span><br><span class="line">- 使用JavaScript表达式，每个绑定都只能包含单个表达式。</span><br><span class="line">&#123;`&#123; message.split(&apos;&apos;).reverse().join(&apos;&apos;) &#125;&#125;`  </span><br><span class="line"></span><br><span class="line">#### 指令</span><br><span class="line"></span><br><span class="line">指令特性的值预期是单个 JavaScript 表达式。</span><br><span class="line">指令的职责是，当表达式的值改变时，将其产生的连带影响，响应式地作用于 DOM。</span><br><span class="line">- 参数</span><br><span class="line">一些指令能够接收一个“参数”，在指令名称之后以冒号表示。  </span><br><span class="line">`v-bind`指令：相应式地更新。`v-on`指令：用于监听 DOM 事件。</span><br><span class="line">- 修饰符</span><br><span class="line">`&lt;form v-on:submit.prevent=&quot;onSubmit&quot;&gt;...&lt;/form&gt;`</span><br><span class="line"></span><br><span class="line">#### 缩写</span><br><span class="line">```vue</span><br><span class="line">&lt;!-- v-bind 完整语法 --&gt;</span><br><span class="line">&lt;a v-bind:href=&quot;url&quot;&gt;...&lt;/a&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- 缩写 --&gt;</span><br><span class="line">&lt;a :href=&quot;url&quot;&gt;...&lt;/a&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- v-on 完整语法 --&gt;</span><br><span class="line">&lt;a v-on:click=&quot;doSomething&quot;&gt;...&lt;/a&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- 缩写 --&gt;</span><br><span class="line">&lt;a @click=&quot;doSomething&quot;&gt;...&lt;/a&gt;</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>每个 Vue 应用都是通过用 Vue 函数创建一个新的 Vue 实例开始的。<br>一个 Vue 应用由一个通过 new Vue 创建的根 Vue 实例，以及可选的嵌套的、可复用的组件树组成。<br>你只需要明白所有的 Vue 组件都是 Vue 实例，并且接受相同的选项对象。<br>只有当实例被创建时 data 中存在的属性才是响应式的。<br>如果你知道你会在晚些时候需要一个属性，但是一开始它为空或不存在，那么你仅需要设置一些初始值。</p>
+<li><p>计算属性<br>对于任何复杂逻辑，你都应当使用计算属性。提供的函数将用作属性 <code>getter</code> 函数。<br>计算属性的 getter 函数是没有副作用 (side effect) 的，这使它更易于测试和理解。<br>不同的是计算属性是基于它们的依赖进行缓存的。只在相关依赖发生改变时它们才会重新求值。<br>每当触发重新渲染时，调用方法将总会再次执行函数。<br>计算属性有<code>getter</code>也有<code>setter</code></p>
 </li>
-<li>不要在选项属性或回调上使用箭头函数。</li>
-<li><a href="https://cn.vuejs.org/v2/guide/instance.html" target="_blank" rel="noopener">生命周期</a></li>
+<li><p>侦听属性<code>watch</code><br>当需要在数据变化时执行<em>异步</em>或开销较大的操作时，这个方式是最有用的。<br>使用 watch 选项允许我们执行异步操作 (访问一个 API)。<br>vm (ViewModel 的缩写)  </p>
+</li>
 </ul>
-<img src="/2018/12/08/2018-12-08-Vue-beginning/lifecycle.png" title="lifecycle join">
-<h3 id="模板语法"><a href="#模板语法" class="headerlink" title="模板语法"></a>模板语法</h3><h4 id="插值"><a href="#插值" class="headerlink" title="插值"></a>插值</h4><ul>
-<li>双大括号形式<br><code>&lt;span&gt;Message: &lt;/span&gt;</code></li>
-<li>原始HTML<br><code>&lt;span v-html=&quot;rawHtml&quot;&gt;&lt;/span&gt;</code></li>
-<li>特性 ?<br><code>&lt;button v-bind:disabled=&quot;isButtonDisabled&quot;&gt;Button&lt;/button&gt;</code></li>
-<li>使用JavaScript表达式，每个绑定都只能包含单个表达式。<br>{<code>{ message.split(&#39;&#39;).reverse().join(&#39;&#39;) }}</code>  </li>
-</ul>
-<h4 id="指令"><a href="#指令" class="headerlink" title="指令"></a>指令</h4><p>指令特性的值预期是单个 JavaScript 表达式。指令的职责是，当表达式的值改变时，将其产生的连带影响，响应式地作用于 DOM。</p>
 
   </div>
 </article>
@@ -221,7 +206,7 @@ template: &apos;&lt;li&gt;{{ todo.text }}&lt;/li&gt;&apos;
     </div>
 
     <div id="toc-footer" style="display: none">
-      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#模板语法"><span class="toc-number">1.</span> <span class="toc-text">模板语法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#插值"><span class="toc-number">1.1.</span> <span class="toc-text">插值</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#指令"><span class="toc-number">1.2.</span> <span class="toc-text">指令</span></a></li></ol></li></ol>
+      
     </div>
 
     <div id="share-footer" style="display: none">
