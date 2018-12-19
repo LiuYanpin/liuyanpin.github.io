@@ -13,7 +13,7 @@
 <meta property="og:site_name" content="大道至简">
 <meta property="og:description" content="Producing发信息。只发不收。 queue相当于一个邮箱。只在RabbitMQ中存在。没有约束条件（除了内存容量）。 Consuming等待接收信息的一个程序。  Connection代表一个真实的TCP连接。  Channel代表一个Connection里面一个虚拟的连接（AMPQ）连接。一个TCP连接里面可以加载多个虚拟的连接。技术上来说，一个Channel就可以解决所有问题了。但是对">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-12-07T09:26:54.020Z">
+<meta property="og:updated_time" content="2018-12-19T08:01:35.837Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="RabbitMQ入门">
 <meta name="twitter:description" content="Producing发信息。只发不收。 queue相当于一个邮箱。只在RabbitMQ中存在。没有约束条件（除了内存容量）。 Consuming等待接收信息的一个程序。  Connection代表一个真实的TCP连接。  Channel代表一个Connection里面一个虚拟的连接（AMPQ）连接。一个TCP连接里面可以加载多个虚拟的连接。技术上来说，一个Channel就可以解决所有问题了。但是对">
@@ -176,6 +176,10 @@
 <li>Consumer</li>
 </ul>
 <p>关闭Connection连接就会关闭所有的Channel，关闭一个Channel就会关闭所有的Consumer。<br>取消一个Consumer是被允许的。</p>
+<ul>
+<li>Tutorial总结</li>
+<li>参考<a href="https://github.com/LiuYanpin/RabbitMQDemo.git" target="_blank" rel="noopener">RabbitMQDemo</a>这个项目。</li>
+</ul>
 
   </div>
 </article>
