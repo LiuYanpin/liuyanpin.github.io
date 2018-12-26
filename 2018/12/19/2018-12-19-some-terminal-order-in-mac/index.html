@@ -6,17 +6,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="HandheldFriendly" content="True">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <meta name="description" content="安装jenvrew install jenv  查看Java路径~ /usr/libexec/java_home -V  修改配置文件~ vim ~/.bash_profile  确认本机shell在命令行中输入echo $SHELL如果输出/bin/bash则为bash，如果输出结果为 /bin/zsh则为zsh">
+    <meta name="description" content="安装jenvrew install jenv  查看Java路径~ /usr/libexec/java_home -V  修改配置文件~ vim ~/.bash_profile  确认本机shell在命令行中输入echo $SHELL如果输出/bin/bash则为bash，如果输出结果为 /bin/zsh则为zsh  本地起eureka./gradlew clean buildjava -jar">
 <meta property="og:type" content="article">
 <meta property="og:title" content="一些常用的命令">
 <meta property="og:url" content="http://liuyanping.com/2018/12/19/2018-12-19-some-terminal-order-in-mac/index.html">
 <meta property="og:site_name" content="大道至简">
-<meta property="og:description" content="安装jenvrew install jenv  查看Java路径~ /usr/libexec/java_home -V  修改配置文件~ vim ~/.bash_profile  确认本机shell在命令行中输入echo $SHELL如果输出/bin/bash则为bash，如果输出结果为 /bin/zsh则为zsh">
+<meta property="og:description" content="安装jenvrew install jenv  查看Java路径~ /usr/libexec/java_home -V  修改配置文件~ vim ~/.bash_profile  确认本机shell在命令行中输入echo $SHELL如果输出/bin/bash则为bash，如果输出结果为 /bin/zsh则为zsh  本地起eureka./gradlew clean buildjava -jar">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-12-19T09:43:10.194Z">
+<meta property="og:updated_time" content="2018-12-26T08:16:12.980Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="一些常用的命令">
-<meta name="twitter:description" content="安装jenvrew install jenv  查看Java路径~ /usr/libexec/java_home -V  修改配置文件~ vim ~/.bash_profile  确认本机shell在命令行中输入echo $SHELL如果输出/bin/bash则为bash，如果输出结果为 /bin/zsh则为zsh">
+<meta name="twitter:description" content="安装jenvrew install jenv  查看Java路径~ /usr/libexec/java_home -V  修改配置文件~ vim ~/.bash_profile  确认本机shell在命令行中输入echo $SHELL如果输出/bin/bash则为bash，如果输出结果为 /bin/zsh则为zsh  本地起eureka./gradlew clean buildjava -jar">
     
     
         
@@ -173,7 +173,11 @@
 </li>
 <li><p>确认本机shell<br>在命令行中输入<code>echo $SHELL</code><br>如果输出/bin/bash则为bash，<br>如果输出结果为 /bin/zsh则为zsh</p>
 </li>
-<li></li>
+<li><p>本地起eureka<br>./gradlew clean build<br>java -jar app.jar -Djetty.port=8761</p>
+</li>
+<li><p>本地起服务</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">./gradlew clean build</span><br><span class="line">cd build/libs</span><br><span class="line">java -jar app.jar</span><br></pre></td></tr></table></figure>
+</li>
 </ul>
 
   </div>
