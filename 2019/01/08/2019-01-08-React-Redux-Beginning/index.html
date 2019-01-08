@@ -6,17 +6,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="HandheldFriendly" content="True">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <meta name="description" content="《深入浅出React和Redux》使用create-react-app工具。React的首要思想是通过组件来开发应用。分而治之设计原则：做同一件事的代码应该有高耦合性。UI=render(data)纯函数，没有副作用，输出完全依赖于输入的函数。作为一个合格的开发者，不要只满足于编写出了可运行的代码，而要了解代码背后的工作原理；不要只满足于自己编写的程序能够运行，还要让自己的代码可读并且易于维护。这">
+    <meta name="description" content="使用create-react-app工具。React的首要思想是通过组件来开发应用。分而治之设计原则：做同一件事的代码应该有高耦合性。UI=render(data)纯函数，没有副作用，输出完全依赖于输入的函数。作为一个合格的开发者，不要只满足于编写出了可运行的代码，而要了解代码背后的工作原理；不要只满足于自己编写的程序能够运行，还要让自己的代码可读并且易于维护。这样才能开发出高质量的软件。高内聚指">
 <meta property="og:type" content="article">
-<meta property="og:title" content="2019-01-08-React-Redux-Beginning">
+<meta property="og:title" content="《深入浅出React和Redux》小结">
 <meta property="og:url" content="http://liuyanping.com/2019/01/08/2019-01-08-React-Redux-Beginning/index.html">
 <meta property="og:site_name" content="大道至简">
-<meta property="og:description" content="《深入浅出React和Redux》使用create-react-app工具。React的首要思想是通过组件来开发应用。分而治之设计原则：做同一件事的代码应该有高耦合性。UI=render(data)纯函数，没有副作用，输出完全依赖于输入的函数。作为一个合格的开发者，不要只满足于编写出了可运行的代码，而要了解代码背后的工作原理；不要只满足于自己编写的程序能够运行，还要让自己的代码可读并且易于维护。这">
+<meta property="og:description" content="使用create-react-app工具。React的首要思想是通过组件来开发应用。分而治之设计原则：做同一件事的代码应该有高耦合性。UI=render(data)纯函数，没有副作用，输出完全依赖于输入的函数。作为一个合格的开发者，不要只满足于编写出了可运行的代码，而要了解代码背后的工作原理；不要只满足于自己编写的程序能够运行，还要让自己的代码可读并且易于维护。这样才能开发出高质量的软件。高内聚指">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-01-08T01:25:51.497Z">
+<meta property="og:updated_time" content="2019-01-08T01:29:55.928Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="2019-01-08-React-Redux-Beginning">
-<meta name="twitter:description" content="《深入浅出React和Redux》使用create-react-app工具。React的首要思想是通过组件来开发应用。分而治之设计原则：做同一件事的代码应该有高耦合性。UI=render(data)纯函数，没有副作用，输出完全依赖于输入的函数。作为一个合格的开发者，不要只满足于编写出了可运行的代码，而要了解代码背后的工作原理；不要只满足于自己编写的程序能够运行，还要让自己的代码可读并且易于维护。这">
+<meta name="twitter:title" content="《深入浅出React和Redux》小结">
+<meta name="twitter:description" content="使用create-react-app工具。React的首要思想是通过组件来开发应用。分而治之设计原则：做同一件事的代码应该有高耦合性。UI=render(data)纯函数，没有副作用，输出完全依赖于输入的函数。作为一个合格的开发者，不要只满足于编写出了可运行的代码，而要了解代码背后的工作原理；不要只满足于自己编写的程序能够运行，还要让自己的代码可读并且易于维护。这样才能开发出高质量的软件。高内聚指">
     
     
         
@@ -36,7 +36,7 @@
         
     
     <!-- title -->
-    <title>2019-01-08-React-Redux-Beginning</title>
+    <title>《深入浅出React和Redux》小结</title>
     <!-- styles -->
     <link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="/lib/meslo-LG/styles.css">
@@ -115,15 +115,15 @@
     <div id="share" style="display: none">
       <ul>
   <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://liuyanping.com/2019/01/08/2019-01-08-React-Redux-Beginning/"><i class="fa fa-facebook " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://twitter.com/share?url=http://liuyanping.com/2019/01/08/2019-01-08-React-Redux-Beginning/&text=2019-01-08-React-Redux-Beginning"><i class="fa fa-twitter " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://liuyanping.com/2019/01/08/2019-01-08-React-Redux-Beginning/&title=2019-01-08-React-Redux-Beginning"><i class="fa fa-linkedin " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://liuyanping.com/2019/01/08/2019-01-08-React-Redux-Beginning/&is_video=false&description=2019-01-08-React-Redux-Beginning"><i class="fa fa-pinterest " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="mailto:?subject=2019-01-08-React-Redux-Beginning&body=Check out this article: http://liuyanping.com/2019/01/08/2019-01-08-React-Redux-Beginning/"><i class="fa fa-envelope " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://getpocket.com/save?url=http://liuyanping.com/2019/01/08/2019-01-08-React-Redux-Beginning/&title=2019-01-08-React-Redux-Beginning"><i class="fa fa-get-pocket " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://reddit.com/submit?url=http://liuyanping.com/2019/01/08/2019-01-08-React-Redux-Beginning/&title=2019-01-08-React-Redux-Beginning"><i class="fa fa-reddit " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://liuyanping.com/2019/01/08/2019-01-08-React-Redux-Beginning/&title=2019-01-08-React-Redux-Beginning"><i class="fa fa-stumbleupon " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://digg.com/submit?url=http://liuyanping.com/2019/01/08/2019-01-08-React-Redux-Beginning/&title=2019-01-08-React-Redux-Beginning"><i class="fa fa-digg " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://liuyanping.com/2019/01/08/2019-01-08-React-Redux-Beginning/&name=2019-01-08-React-Redux-Beginning&description="><i class="fa fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://liuyanping.com/2019/01/08/2019-01-08-React-Redux-Beginning/&text=《深入浅出React和Redux》小结"><i class="fa fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://liuyanping.com/2019/01/08/2019-01-08-React-Redux-Beginning/&title=《深入浅出React和Redux》小结"><i class="fa fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://liuyanping.com/2019/01/08/2019-01-08-React-Redux-Beginning/&is_video=false&description=《深入浅出React和Redux》小结"><i class="fa fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=《深入浅出React和Redux》小结&body=Check out this article: http://liuyanping.com/2019/01/08/2019-01-08-React-Redux-Beginning/"><i class="fa fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://liuyanping.com/2019/01/08/2019-01-08-React-Redux-Beginning/&title=《深入浅出React和Redux》小结"><i class="fa fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://liuyanping.com/2019/01/08/2019-01-08-React-Redux-Beginning/&title=《深入浅出React和Redux》小结"><i class="fa fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://liuyanping.com/2019/01/08/2019-01-08-React-Redux-Beginning/&title=《深入浅出React和Redux》小结"><i class="fa fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://liuyanping.com/2019/01/08/2019-01-08-React-Redux-Beginning/&title=《深入浅出React和Redux》小结"><i class="fa fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://liuyanping.com/2019/01/08/2019-01-08-React-Redux-Beginning/&name=《深入浅出React和Redux》小结&description="><i class="fa fa-tumblr " aria-hidden="true"></i></a></li>
 </ul>
 
     </div>
@@ -140,7 +140,7 @@
   <header>
     
     <h1 class="posttitle" itemprop="name headline">
-        2019-01-08-React-Redux-Beginning
+        《深入浅出React和Redux》小结
     </h1>
 
 
@@ -162,7 +162,7 @@
   
 
   <div class="content" itemprop="articleBody">
-    <p>《深入浅出React和Redux》<br>使用<code>create-react-app</code>工具。<br>React的首要思想是通过组件来开发应用。<br><code>分而治之</code><br>设计原则：做同一件事的代码应该有高耦合性。<br><code>UI=render(data)</code><br>纯函数，没有副作用，输出完全依赖于输入的函数。<br>作为一个合格的开发者，不要只满足于编写出了可运行的代码，而要了解代码背后的工作原理；<br>不要只满足于自己编写的程序能够运行，还要让自己的代码可读并且易于维护。这样才能开发出高质量的软件。<br><code>高内聚</code>指的是把逻辑紧密相关的内容放在同一个组件在中。<br><code>低耦合</code>指的是不同组件之间的依赖关系要尽量弱化。<br><strong>组件的生命周期</strong><br>单向数据流，组件向外传递数据的方式：使用回调函数。</p>
+    <p>使用<code>create-react-app</code>工具。<br>React的首要思想是通过组件来开发应用。<br><code>分而治之</code><br>设计原则：做同一件事的代码应该有高耦合性。<br><code>UI=render(data)</code><br>纯函数，没有副作用，输出完全依赖于输入的函数。<br>作为一个合格的开发者，不要只满足于编写出了可运行的代码，而要了解代码背后的工作原理；<br>不要只满足于自己编写的程序能够运行，还要让自己的代码可读并且易于维护。这样才能开发出高质量的软件。<br><code>高内聚</code>指的是把逻辑紧密相关的内容放在同一个组件在中。<br><code>低耦合</code>指的是不同组件之间的依赖关系要尽量弱化。<br><strong>组件的生命周期</strong><br>单向数据流，组件向外传递数据的方式：使用回调函数。</p>
 <h3 id="Redux的基本原则"><a href="#Redux的基本原则" class="headerlink" title="Redux的基本原则"></a>Redux的基本原则</h3><ul>
 <li>唯一数据源（Single Source of Truth）</li>
 <li>保持状态只读（State is read-only）</li>
@@ -173,9 +173,9 @@
 </ul>
 <p>容器组件Container Component与展示组件Presentational Component。<br>组件上下文<code>Context</code>，解决公共数据的问题。</p>
 <h3 id="模块化应用的注意事项"><a href="#模块化应用的注意事项" class="headerlink" title="模块化应用的注意事项"></a>模块化应用的注意事项</h3><ul>
-<li>代码文件的组织结构</li>
+<li>代码文件的组织结构(按角色组织、按功能组织)</li>
 <li>确定模块的边界</li>
-<li>Store的状态书设计</li>
+<li>Store的状态树设计<br>一个模块控制一个状态节点，避免冗余数据，树形结构扁平。</li>
 </ul>
 
   </div>
@@ -207,15 +207,15 @@
     <div id="share-footer" style="display: none">
       <ul>
   <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://liuyanping.com/2019/01/08/2019-01-08-React-Redux-Beginning/"><i class="fa fa-facebook fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://twitter.com/share?url=http://liuyanping.com/2019/01/08/2019-01-08-React-Redux-Beginning/&text=2019-01-08-React-Redux-Beginning"><i class="fa fa-twitter fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://liuyanping.com/2019/01/08/2019-01-08-React-Redux-Beginning/&title=2019-01-08-React-Redux-Beginning"><i class="fa fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://liuyanping.com/2019/01/08/2019-01-08-React-Redux-Beginning/&is_video=false&description=2019-01-08-React-Redux-Beginning"><i class="fa fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="mailto:?subject=2019-01-08-React-Redux-Beginning&body=Check out this article: http://liuyanping.com/2019/01/08/2019-01-08-React-Redux-Beginning/"><i class="fa fa-envelope fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://getpocket.com/save?url=http://liuyanping.com/2019/01/08/2019-01-08-React-Redux-Beginning/&title=2019-01-08-React-Redux-Beginning"><i class="fa fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://reddit.com/submit?url=http://liuyanping.com/2019/01/08/2019-01-08-React-Redux-Beginning/&title=2019-01-08-React-Redux-Beginning"><i class="fa fa-reddit fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://liuyanping.com/2019/01/08/2019-01-08-React-Redux-Beginning/&title=2019-01-08-React-Redux-Beginning"><i class="fa fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://digg.com/submit?url=http://liuyanping.com/2019/01/08/2019-01-08-React-Redux-Beginning/&title=2019-01-08-React-Redux-Beginning"><i class="fa fa-digg fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://liuyanping.com/2019/01/08/2019-01-08-React-Redux-Beginning/&name=2019-01-08-React-Redux-Beginning&description="><i class="fa fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://liuyanping.com/2019/01/08/2019-01-08-React-Redux-Beginning/&text=《深入浅出React和Redux》小结"><i class="fa fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://liuyanping.com/2019/01/08/2019-01-08-React-Redux-Beginning/&title=《深入浅出React和Redux》小结"><i class="fa fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://liuyanping.com/2019/01/08/2019-01-08-React-Redux-Beginning/&is_video=false&description=《深入浅出React和Redux》小结"><i class="fa fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=《深入浅出React和Redux》小结&body=Check out this article: http://liuyanping.com/2019/01/08/2019-01-08-React-Redux-Beginning/"><i class="fa fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://liuyanping.com/2019/01/08/2019-01-08-React-Redux-Beginning/&title=《深入浅出React和Redux》小结"><i class="fa fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://liuyanping.com/2019/01/08/2019-01-08-React-Redux-Beginning/&title=《深入浅出React和Redux》小结"><i class="fa fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://liuyanping.com/2019/01/08/2019-01-08-React-Redux-Beginning/&title=《深入浅出React和Redux》小结"><i class="fa fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://liuyanping.com/2019/01/08/2019-01-08-React-Redux-Beginning/&title=《深入浅出React和Redux》小结"><i class="fa fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://liuyanping.com/2019/01/08/2019-01-08-React-Redux-Beginning/&name=《深入浅出React和Redux》小结&description="><i class="fa fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
 </ul>
 
     </div>
