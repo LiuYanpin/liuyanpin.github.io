@@ -6,17 +6,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="HandheldFriendly" content="True">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <meta name="description" content="使用带密码登录的命令1234edis-cli -h XXXX -p XXXXauth &amp;quot;yourpassword&amp;quot;使用第几个数据库select X">
+    <meta name="description" content="使用带密码登录的命令1234edis-cli -h XXXX -p XXXXauth &amp;quot;yourpassword&amp;quot;使用第几个数据库select X 基本数据结构 String字符串 Hash散列 List列表 Set集合 Sorted Set: 有序集合   守护进程（Daemon Process），也就是通常说的 Daemon 进程（精灵进程），是 Linux 中的后台服务进">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Redis入门">
 <meta property="og:url" content="http://liuyanping.com/2018/12/28/2018-12-28-Redis-Beginning/index.html">
 <meta property="og:site_name" content="大道至简">
-<meta property="og:description" content="使用带密码登录的命令1234edis-cli -h XXXX -p XXXXauth &amp;quot;yourpassword&amp;quot;使用第几个数据库select X">
+<meta property="og:description" content="使用带密码登录的命令1234edis-cli -h XXXX -p XXXXauth &amp;quot;yourpassword&amp;quot;使用第几个数据库select X 基本数据结构 String字符串 Hash散列 List列表 Set集合 Sorted Set: 有序集合   守护进程（Daemon Process），也就是通常说的 Daemon 进程（精灵进程），是 Linux 中的后台服务进">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-12-28T08:27:23.987Z">
+<meta property="og:updated_time" content="2018-12-28T14:35:12.610Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Redis入门">
-<meta name="twitter:description" content="使用带密码登录的命令1234edis-cli -h XXXX -p XXXXauth &amp;quot;yourpassword&amp;quot;使用第几个数据库select X">
+<meta name="twitter:description" content="使用带密码登录的命令1234edis-cli -h XXXX -p XXXXauth &amp;quot;yourpassword&amp;quot;使用第几个数据库select X 基本数据结构 String字符串 Hash散列 List列表 Set集合 Sorted Set: 有序集合   守护进程（Daemon Process），也就是通常说的 Daemon 进程（精灵进程），是 Linux 中的后台服务进">
     
     
         
@@ -100,6 +100,8 @@
     <span id="actions">
       <ul>
         
+        <li><a class="icon" href="/2019/01/08/2019-01-08-React-Redux-Beginning/"><i class="fa fa-chevron-left" aria-hidden="true" onmouseover="$("#i-prev").toggle();" onmouseout="$("#i-prev").toggle();"></i></a></li>
+        
         
         <li><a class="icon" href="/2018/12/20/2018-12-20-SOLID/"><i class="fa fa-chevron-right" aria-hidden="true" onmouseover="$("#i-next").toggle();" onmouseout="$("#i-next").toggle();"></i></a></li>
         
@@ -128,7 +130,7 @@
 
     </div>
     <div id="toc">
-      
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#基本数据结构"><span class="toc-number">1.</span> <span class="toc-text">基本数据结构</span></a></li></ol>
     </div>
   </span>
 </div>
@@ -163,6 +165,19 @@
 
   <div class="content" itemprop="articleBody">
     <p>使用带密码登录的命令<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">edis-cli -h XXXX -p XXXX</span><br><span class="line">auth &quot;yourpassword&quot;</span><br><span class="line">使用第几个数据库</span><br><span class="line">select X</span><br></pre></td></tr></table></figure></p>
+<h2 id="基本数据结构"><a href="#基本数据结构" class="headerlink" title="基本数据结构"></a>基本数据结构</h2><ul>
+<li>String字符串</li>
+<li>Hash散列</li>
+<li>List列表</li>
+<li>Set集合</li>
+<li>Sorted Set: 有序集合</li>
+</ul>
+<blockquote>
+<p>守护进程（Daemon Process），也就是通常说的 Daemon 进程（精灵进程），是 Linux 中的后台服务进程。它是一个生存期较长的进程，通常独立于控制终端并且周期性地执行某种任务或等待处理某些发生的事件。</p>
+</blockquote>
+<blockquote>
+<p>守护进程是个特殊的孤儿进程，这种进程脱离终端，为什么要脱离终端呢？之所以脱离于终端是为了避免进程被任何终端所产生的信息所打断，其在执行过程中的信息也不在任何终端上显示。由于在 linux 中，每一个系统与用户进行交流的界面称为终端，每一个从此终端开始运行的进程都会依附于这个终端，这个终端就称为这些进程的控制终端，当控制终端被关闭时，相应的进程都会自动关闭。</p>
+</blockquote>
 
   </div>
 </article>
@@ -187,7 +202,7 @@
     </div>
 
     <div id="toc-footer" style="display: none">
-      
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#基本数据结构"><span class="toc-number">1.</span> <span class="toc-text">基本数据结构</span></a></li></ol>
     </div>
 
     <div id="share-footer" style="display: none">
@@ -221,7 +236,7 @@
       
       <footer id="footer">
   <div class="footer-left">
-    Copyright &copy; 2018 Yanping Liu
+    Copyright &copy; 2019 Yanping Liu
   </div>
   <div class="footer-right">
     <nav>
